@@ -102,6 +102,58 @@
                        FontSize="20">
             </TextBlock> <!--Titel. Ändert sich je nach dem auf welcher Seite man sich befindet-->
         </Grid>
+
+        <Grid x:Name="GridStartseite" Grid.Row="1" Background="#e1dddb" Visibility="Visible"> <!--Startseite, die einen begrüßt, wenn man das Programm startet.-->
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition Height="150"/>
+                <RowDefinition Height="80"/>
+                <RowDefinition Height="70"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Grid.Row="1" 
+                       Text="Mathe lernen mit Fritz dem Rechenfuchs"
+                       FontSize="30"
+                       TextAlignment="Center"
+                       VerticalAlignment="Center">
+            </TextBlock>
+
+            <Button     x:Name="ButtonStartseite" Grid.Row="3"
+                        Content="Start" 
+                        Foreground="Black"
+                        FontSize="42"
+                        FontWeight="Medium"
+                        
+                        Click="ButtonStartseite_Click">
+
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="#E9591F"/>
+                        <Setter Property="Cursor" Value="Hand"/>
+
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#EF885F"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Width="300" Height="70"
+                                    CornerRadius="32"
+                                    Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center"
+                                                  HorizontalAlignment="Center">
+                            </ContentPresenter>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+
+            </Button>
+        </Grid> 
     </Grid>
     
 </Window>

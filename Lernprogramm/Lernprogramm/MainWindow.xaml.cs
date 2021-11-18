@@ -29,5 +29,15 @@ namespace Lernprogramm
         {
 
         }
+        private void Menu_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ButtonStartseite_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
     }
 }
