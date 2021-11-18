@@ -1,0 +1,15 @@
+C:\Users\lucat\Desktop\git\Projekt\Lernprogramm\Lernprogramm\bin\Debug\Lernprogramm.exe.config
+C:\Users\lucat\Desktop\git\Projekt\Lernprogramm\Lernprogramm\bin\Debug\Lernprogramm.exe
+C:\Users\lucat\Desktop\git\Projekt\Lernprogramm\Lernprogramm\bin\Debug\Lernprogramm.pdb
+C:\Users\lucat\Desktop\git\Projekt\Lernprogramm\Lernprogramm\obj\Debug\Lernprogramm.csprojAssemblyReference.cache
+C:\Users\lucat\Desktop\git\Projekt\Lernprogramm\Lernprogramm\obj\Debug\MainWindow.g.cs
+C:\Users\lucat\Desktop\git\Projekt\Lernprogramm\Lernprogramm\obj\Debug\App.g.cs
+C:\Users\lucat\Desktop\git\Projekt\Lernprogramm\Lernprogramm\obj\Debug\Lernprogramm_MarkupCompile.cache
+C:\Users\lucat\Desktop\git\Projekt\Lernprogramm\Lernprogramm\obj\Debug\Lernprogramm_MarkupCompile.lref
+C:\Users\lucat\Desktop\git\Projekt\Lernprogramm\Lernprogramm\obj\Debug\MainWindow.baml
+C:\Users\lucat\Desktop\git\Projekt\Lernprogramm\Lernprogramm\obj\Debug\Lernprogramm.g.resources
+C:\Users\lucat\Desktop\git\Projekt\Lernprogramm\Lernprogramm\obj\Debug\Lernprogramm.Properties.Resources.resources
+C:\Users\lucat\Desktop\git\Projekt\Lernprogramm\Lernprogramm\obj\Debug\Lernprogramm.csproj.GenerateResource.cache
+C:\Users\lucat\Desktop\git\Projekt\Lernprogramm\Lernprogramm\obj\Debug\Lernprogramm.csproj.CoreCompileInputs.cache
+C:\Users\lucat\Desktop\git\Projekt\Lernprogramm\Lernprogramm\obj\Debug\Lernprogramm.exe
+C:\Users\lucat\Desktop\git\Projekt\Lernprogramm\Lernprogramm\obj\Debug\Lernprogramm.pdb

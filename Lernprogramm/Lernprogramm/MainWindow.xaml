@@ -155,7 +155,7 @@
             </Button>
         </Grid>
 
-        <Grid x:Name="GridMenu" Grid.Row="1" Background="#e1dddb" Visibility="Visible"> <!--Menü, bei dem man sich für verschiedene Übungsmodi entscheiden kann--> 
+        <Grid x:Name="GridMenu" Grid.Row="1" Background="#e1dddb" Visibility="Hidden"> <!--Menü, bei dem man sich für verschiedene Übungsmodi entscheiden kann--> 
             <Grid.RowDefinitions>
                 <RowDefinition/>
                 <RowDefinition/>
@@ -264,7 +264,7 @@
             </Button>
         </Grid>
 
-        <Grid x:Name="GridSchwierigkeit" Grid.Row="1" Background="#e1dddb" Visibility="Visible"> <!--Auswahlmöglichkeiten zum Schwierigkeitsgrad-->
+        <Grid x:Name="GridSchwierigkeit" Grid.Row="1" Background="#e1dddb" Visibility="Hidden"> <!--Auswahlmöglichkeiten zum Schwierigkeitsgrad-->
             <Grid.RowDefinitions>
                 <RowDefinition/>
                 <RowDefinition/>
@@ -393,7 +393,7 @@
             </Button>
         </Grid>
 
-        <Grid x:Name="GridAufgabenmenge" Grid.Row="11" Background="#e1dddb" Visibility="Visible">
+        <Grid x:Name="GridAufgabenmenge" Grid.Row="11" Background="#e1dddb" Visibility="Hidden">
             <Grid.RowDefinitions>
                 <RowDefinition/>
                 <RowDefinition/>
