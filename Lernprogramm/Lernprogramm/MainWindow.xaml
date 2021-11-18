@@ -264,7 +264,7 @@
             </Button>
         </Grid>
 
-        <Grid x:Name="GridPlusRechnen" Grid.Row="1" Background="#e1dddb" Visibility="Visible"> <!--Auswahlmöglichkeiten zum Schwierigkeitsgrad-->
+        <Grid x:Name="GridSchwierigkeit" Grid.Row="1" Background="#e1dddb" Visibility="Visible"> <!--Auswahlmöglichkeiten zum Schwierigkeitsgrad-->
             <Grid.RowDefinitions>
                 <RowDefinition/>
                 <RowDefinition/>
@@ -293,13 +293,13 @@
                 </TextBlock>
             </Border>
 
-            <Button     x:Name="PlusRechnenEinfach" Content="Einfach" Grid.Row="1"
+            <Button     x:Name="Einfach" Content="Einfach" Grid.Row="1"
                         Foreground="Black"
                         FontSize="36"
                         FontWeight="Medium"
                         Margin="30,0,10,0"
                         
-                        Click="PlusRechnenEinfach_Click">
+                        Click="Einfach_Click">
 
                 <Button.Style>
                     <Style TargetType="Button">
@@ -326,13 +326,13 @@
                 </Button.Template>
             </Button>
 
-            <Button     x:Name="PlusRechnenMittel" Content="Mittel" Grid.Row="1" Grid.Column="1"
+            <Button     x:Name="Mittel" Content="Mittel" Grid.Row="1" Grid.Column="1"
                         Foreground="Black"
                         FontSize="36"
                         FontWeight="Medium"
                         Margin="20,0"
                         
-                        Click="PlusRechnenMittel_Click">
+                        Click="Mittel_Click">
 
                 <Button.Style>
                     <Style TargetType="Button">
@@ -359,13 +359,13 @@
                 </Button.Template>
             </Button>
 
-            <Button     x:Name="PlusRechnenSchwer" Content="Schwer" Grid.Row="1" Grid.Column="2"
+            <Button     x:Name="Schwer" Content="Schwer" Grid.Row="1" Grid.Column="2"
                         Foreground="Black"
                         FontSize="36"
                         FontWeight="Medium"
                         Margin="10,0,30,0"
                         
-                        Click="PlusRechnenSchwer_Click">
+                        Click="Schwer_Click">
 
                 <Button.Style>
                     <Style TargetType="Button">
@@ -392,7 +392,135 @@
                 </Button.Template>
             </Button>
         </Grid>
-        
+
+        <Grid x:Name="GridAufgabenmenge" Grid.Row="11" Background="#e1dddb" Visibility="Visible">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Border    Grid.ColumnSpan="3"
+                       BorderThickness="1"
+                       CornerRadius="10"
+                       Background="#3B3838"
+                       BorderBrush="#3B3838"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                       Width="500"
+                       Height="40">
+
+                <TextBlock Text="Wie viele Aufgaben möchtest du rechnen?"
+                           FontSize="24"
+                           TextAlignment="Center"
+                           Foreground="White">
+                </TextBlock>
+            </Border>
+
+            <Button     x:Name="Aufgaben5" Content="5" Grid.Row="1"
+                        Foreground="Black"
+                        FontSize="36"
+                        FontWeight="Medium"
+                        Margin="30,0,10,0"
+                        
+                        Click="Aufgaben5_Click">
+
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="#E9C737"/>
+                        <Setter Property="Cursor" Value="Hand"/>
+
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#F3E091"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border CornerRadius="24"
+                                    Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center"
+                                                  HorizontalAlignment="Center">
+                            </ContentPresenter>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+
+            <Button     x:Name="Aufgaben10" Content="10" Grid.Row="1" Grid.Column="1"
+                        Foreground="Black"
+                        FontSize="36"
+                        FontWeight="Medium"
+                        Margin="20,0"
+                        
+                        Click="Aufgaben10_Click">
+
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="#E9591F"/>
+                        <Setter Property="Cursor" Value="Hand"/>
+
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#EF885F"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border CornerRadius="24"
+                                    Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center"
+                                                  HorizontalAlignment="Center">
+                            </ContentPresenter>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+
+            <Button     x:Name="Aufgaben20" Content="20" Grid.Row="1" Grid.Column="2"
+                        Foreground="Black"
+                        FontSize="36"
+                        FontWeight="Medium"
+                        Margin="10,0,30,0"
+                        
+                        Click="Aufgaben20_Click">
+
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="#910D0D"/>
+                        <Setter Property="Cursor" Value="Hand"/>
+
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#B41010"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border CornerRadius="24"
+                                    Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center"
+                                                  HorizontalAlignment="Center">
+                            </ContentPresenter>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+        </Grid>
     </Grid>
     
 </Window>

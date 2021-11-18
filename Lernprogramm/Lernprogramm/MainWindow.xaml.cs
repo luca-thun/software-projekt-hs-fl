@@ -53,5 +53,35 @@ namespace Lernprogramm
         {
 
         }
+
+        private void Einfach_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Mittel_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Schwer_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Aufgaben5_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Aufgaben10_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Aufgaben20_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
