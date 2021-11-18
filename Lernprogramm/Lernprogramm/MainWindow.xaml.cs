@@ -39,5 +39,19 @@ namespace Lernprogramm
 
         }
 
+        private void PlusRechnen_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void MinusRechnen_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ZahlenSortieren_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
