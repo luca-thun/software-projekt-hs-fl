@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Text.RegularExpressions;
 
 namespace Lernprogramm
 {
@@ -31,6 +32,7 @@ namespace Lernprogramm
             GridMenu.Visibility = Visibility.Hidden;
             GridSchwierigkeit.Visibility = Visibility.Hidden;
             GridAufgabenmenge.Visibility = Visibility.Hidden;
+            GridRechenprogramm.Visibility = Visibility.Hidden;
         }
 
         private void Start_Click(object sender, RoutedEventArgs e)
@@ -69,6 +71,7 @@ namespace Lernprogramm
             GridSchwierigkeit.Visibility = Visibility.Visible;
 
             Menu.Visibility = Visibility.Visible;
+            Operator.Text = "+";
         }
 
         private void MinusRechnen_Click(object sender, RoutedEventArgs e)
@@ -78,6 +81,7 @@ namespace Lernprogramm
             GridSchwierigkeit.Visibility = Visibility.Visible;
 
             Menu.Visibility = Visibility.Visible;
+            Operator.Text = "-";
         }
 
         private void ZahlenSortieren_Click(object sender, RoutedEventArgs e)
@@ -108,15 +112,29 @@ namespace Lernprogramm
 
         private void Aufgaben5_Click(object sender, RoutedEventArgs e)
         {
-
+            AllesVerstecken();
+            GridRechenprogramm.Visibility = Visibility.Visible;
         }
 
         private void Aufgaben10_Click(object sender, RoutedEventArgs e)
         {
-
+            AllesVerstecken();
+            GridRechenprogramm.Visibility = Visibility.Visible;
         }
 
         private void Aufgaben20_Click(object sender, RoutedEventArgs e)
+        {
+            AllesVerstecken();
+            GridRechenprogramm.Visibility = Visibility.Visible;
+        }
+
+        private void ErgebnisEingabe_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            Regex regex = new Regex("[^0-9]+");
+            e.Handled = regex.IsMatch(e.Text);
+        }
+
+        private void WeiterRechnen_Click(object sender, RoutedEventArgs e)
         {
 
         }

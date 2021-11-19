@@ -393,7 +393,7 @@
             </Button>
         </Grid>
 
-        <Grid x:Name="GridAufgabenmenge" Grid.Row="11" Background="#e1dddb" Visibility="Hidden">
+        <Grid x:Name="GridAufgabenmenge" Grid.Row="1" Background="#e1dddb" Visibility="Hidden">
             <Grid.RowDefinitions>
                 <RowDefinition/>
                 <RowDefinition/>
@@ -520,6 +520,153 @@
                     </ControlTemplate>
                 </Button.Template>
             </Button>
+        </Grid>
+        <Grid x:Name="GridRechenprogramm" Grid.Row="1" Background="#e1dddb" Visibility="Hidden">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="2*"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Border    Grid.Row="1" Grid.Column="2"
+                       Grid.ColumnSpan="2"
+                       BorderThickness="1"
+                       CornerRadius="20"
+                       Background="#3B3838"
+                       BorderBrush="#3B3838"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                       Width="200"
+                       Height="80">
+
+                <TextBlock x:Name="ObereZahl" Text="00"
+                           FontSize="54"
+                           TextAlignment="Center"
+                           Foreground="White">
+                </TextBlock>
+
+            </Border>
+
+            <Border    Grid.Row="2" Grid.Column="2"
+                       Grid.ColumnSpan="2"
+                       BorderThickness="1"
+                       CornerRadius="20"
+                       Background="#3B3838"
+                       BorderBrush="#3B3838"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                       Width="200"
+                       Height="80">
+
+                <TextBlock x:Name="UntereZahl" Text="00"
+                           FontSize="54"
+                           TextAlignment="Center"
+                           Foreground="White">
+                </TextBlock>
+
+            </Border>
+
+            <Border    Grid.Row="2" Grid.Column="1"
+                       BorderThickness="1"
+                       CornerRadius="20"
+                       Background="#3B3838"
+                       BorderBrush="#3B3838"
+                       HorizontalAlignment="Right"
+                       VerticalAlignment="Center"
+                       Width="80"
+                       Height="80">
+
+                <TextBlock x:Name="Operator" Text="+"
+                           FontSize="54"
+                           TextAlignment="Center"
+                           Foreground="White">
+                </TextBlock>
+
+            </Border>
+
+            <Border    Grid.Row="2" Grid.Column="1"
+                       Grid.RowSpan="2" Grid.ColumnSpan="3"
+                       BorderThickness="1"
+                       Background="#3B3838"
+                       BorderBrush="#3B3838"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                       Width="400"
+                       Height="4">
+
+            </Border>
+
+            <TextBox x:Name="ErgebnisEingabe" Grid.Row="3" Grid.Column="2"
+                     Grid.ColumnSpan="2"
+                     Width="200" Height="80"
+                     VerticalAlignment="Center" TextAlignment="Center"
+                     FontSize="54"
+                     PreviewTextInput="ErgebnisEingabe_PreviewTextInput"
+                     MaxLength="3">
+            </TextBox>
+
+            <Button     x:Name="WeiterRechnen" Content="Weiter" Grid.Row="3" Grid.Column="4"
+                        Foreground="Black"
+                        FontSize="18"
+                        FontWeight="Medium"
+                        Width="80"
+                        Height="80"
+                        HorizontalAlignment="Left"
+                        
+                        Click="WeiterRechnen_Click">
+
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="#Aec33a"/>
+                        <Setter Property="Cursor" Value="Hand"/>
+
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#Dee6ac"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border CornerRadius="24"
+                                    Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center"
+                                                  HorizontalAlignment="Center">
+                            </ContentPresenter>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+
+            <Border    x:Name="LobTextRechnen" Grid.Row="3"
+                       Grid.ColumnSpan="2"
+                       BorderThickness="1"
+                       CornerRadius="20"
+                       Background="#3B3838"
+                       BorderBrush="#3B3838"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                       Width="250"
+                       Height="50"
+                       Visibility="Hidden">
+
+                <TextBlock x:Name="LobPlusText" Text="00"
+                           FontSize="34"
+                           TextAlignment="Center"
+                           Foreground="White">
+                </TextBlock>
+            </Border>
         </Grid>
     </Grid>
     
