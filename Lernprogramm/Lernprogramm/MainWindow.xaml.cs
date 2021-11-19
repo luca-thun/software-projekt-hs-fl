@@ -29,7 +29,8 @@ namespace Lernprogramm
         char rechenOperator;            // Nimmt entweder '+' oder '-' als Wert an
         int schwierigkeitsgrad;         // Nimmt 1, 2 oder 3 als Wert an
         int aufgabenmenge;              // Nimmt 5, 10 oder 20 als Wert an
-        int rechenDurchlauf;
+        int rechenDurchlauf;            // Zählt mit wie viele Aufgaben schon gerechnet wurden
+        int richtigGelöst;              // Zählt mit wie viele Aufgaben davon richtig gelöst wurden
 
         Random zufall = new Random();
 
@@ -97,6 +98,19 @@ namespace Lernprogramm
             GridSchwierigkeit.Visibility = Visibility.Hidden;
             GridAufgabenmenge.Visibility = Visibility.Hidden;
             GridRechenprogramm.Visibility = Visibility.Hidden;
+            GridLeistungsübersicht.Visibility = Visibility.Hidden;
+        }
+
+        public void VariablenZurücksetzen()
+        {
+            rechenOperator = '+';
+            schwierigkeitsgrad = 0;
+            aufgabenmenge = 0;
+            rechenDurchlauf = 0;
+            richtigGelöst = 0;
+            zahl1 = 0;
+            zahl2 = 0;
+            maxZahl2 = 0;
         }
 
         private void Start_Click(object sender, RoutedEventArgs e)
@@ -107,6 +121,8 @@ namespace Lernprogramm
 
             Start.Visibility = Visibility.Hidden;
             Menu.Visibility = Visibility.Hidden;
+
+            VariablenZurücksetzen();
         }
         private void Menu_Click(object sender, RoutedEventArgs e)
         {
@@ -116,6 +132,8 @@ namespace Lernprogramm
 
             Start.Visibility = Visibility.Visible;
             Menu.Visibility = Visibility.Hidden;
+
+            VariablenZurücksetzen();
         }
 
         private void ButtonStartseite_Click(object sender, RoutedEventArgs e)
@@ -214,6 +232,67 @@ namespace Lernprogramm
         }
 
         private void WeiterRechnen_Click(object sender, RoutedEventArgs e)
+        {
+            if (rechenOperator == '+' && rechenDurchlauf < aufgabenmenge)       //Das passiert beim Plusrechenen
+            {
+                if (Convert.ToString(zahl1 + zahl2) == ErgebnisEingabe.Text)
+                {
+                    LobTextRechnen.Visibility = Visibility.Visible;
+                    LobText.Text = "Richtig!";
+                    ErgebnisEingabe.Text = "";
+
+                    richtigGelöst++;
+                    rechenDurchlauf++;
+
+                    RechenTraining();
+                }
+                else
+                {
+                    LobTextRechnen.Visibility = Visibility.Visible;
+                    LobText.Text = "Leider nicht richtig!";
+                    ErgebnisEingabe.Text = "";
+
+                    rechenDurchlauf++;
+
+                    RechenTraining();
+                }
+            }
+
+            if (rechenOperator == '-' && rechenDurchlauf < aufgabenmenge)       //Das passiert beim Minusrechnen
+            {
+                if (Convert.ToString(zahl1 - zahl2) == ErgebnisEingabe.Text)
+                {
+                    LobTextRechnen.Visibility = Visibility.Visible;
+                    LobText.Text = "Richtig!";
+                    ErgebnisEingabe.Text = "";
+
+                    richtigGelöst++;
+                    rechenDurchlauf++;
+
+                    RechenTraining();
+                }
+                else
+                {
+                    LobTextRechnen.Visibility = Visibility.Visible;
+                    LobText.Text = "Leider nicht richtig!";
+                    ErgebnisEingabe.Text = "";
+
+                    rechenDurchlauf++;
+
+                    RechenTraining();
+                }
+            }
+
+            if (rechenDurchlauf == aufgabenmenge)
+            {
+                Titel.Text = "LEISTUNGSÜBERSICHT";
+                AllesVerstecken();
+                GridLeistungsübersicht.Visibility = Visibility.Visible;
+                LeistungText.Text = "Du hast " + richtigGelöst + " von " + aufgabenmenge + " Aufgaben richtig gelöst";
+            }
+        }
+
+        private void ButtonMinispiel_Click(object sender, RoutedEventArgs e)
         {
 
         }
