@@ -36,8 +36,11 @@ namespace Lernprogramm
 
         int zahl1;                      //Wert der oberen Zahl im Rechentableau
         int zahl2;                      //Wert der unteren Zahl im Rechentableau
-
         int maxZahl2;                   //Nimmt den maximalen Wert an, den die zweite Zahl bekommen darf. Beispiel: Bekommt zahl1 den Wert 92 zufällig zugeteilt, darf zahl2 beim plusrechnen maximal den wert 8 bekommen.
+        int[] falschGerechnet1 = new int[20];
+        int array1Zähler;
+        int[] falschGerechnet2 = new int[20];
+        int array2Zähler;
 
         public void RechenTraining()
         {
@@ -99,6 +102,8 @@ namespace Lernprogramm
             GridAufgabenmenge.Visibility = Visibility.Hidden;
             GridRechenprogramm.Visibility = Visibility.Hidden;
             GridLeistungsübersicht.Visibility = Visibility.Hidden;
+            GridMinispiel.Visibility = Visibility.Hidden;
+            GridZahlenSortieren.Visibility = Visibility.Hidden;
         }
 
         public void VariablenZurücksetzen()
@@ -170,6 +175,7 @@ namespace Lernprogramm
         {
             Titel.Text = "ZAHLEN SORTIEREN";
             AllesVerstecken();
+            GridZahlenSortieren.Visibility = Visibility.Visible;
 
             Menu.Visibility = Visibility.Visible;
         }
@@ -252,6 +258,11 @@ namespace Lernprogramm
                     LobText.Text = "Leider nicht richtig!";
                     ErgebnisEingabe.Text = "";
 
+                    falschGerechnet1[array1Zähler] = zahl1;
+                    array1Zähler++;
+                    falschGerechnet2[array2Zähler] = zahl2;
+                    array1Zähler++;
+
                     rechenDurchlauf++;
 
                     RechenTraining();
@@ -277,13 +288,24 @@ namespace Lernprogramm
                     LobText.Text = "Leider nicht richtig!";
                     ErgebnisEingabe.Text = "";
 
+                    falschGerechnet1[array1Zähler] = zahl1;
+                    array1Zähler++;
+                    falschGerechnet2[array2Zähler] = zahl2;
+                    array1Zähler++;
+
                     rechenDurchlauf++;
 
                     RechenTraining();
                 }
             }
 
-            if (rechenDurchlauf == aufgabenmenge)
+            if (rechenDurchlauf == aufgabenmenge && falschGerechnet1[0] != 0)
+            {
+                ObereZahl.Text = Convert.ToString(falschGerechnet1[0]);
+                UntereZahl.Text = Convert.ToString(falschGerechnet2[0]);
+            }
+
+            if (rechenDurchlauf == aufgabenmenge && falschGerechnet1[0] == 0)
             {
                 Titel.Text = "LEISTUNGSÜBERSICHT";
                 AllesVerstecken();
@@ -293,6 +315,74 @@ namespace Lernprogramm
         }
 
         private void ButtonMinispiel_Click(object sender, RoutedEventArgs e)
+        {
+            Titel.Text = "MINISPIEL";
+            AllesVerstecken();
+
+            GridMinispiel.Visibility = Visibility.Visible;
+        }
+
+        private void Weg1_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Weg2_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Weg3_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Sortieren1_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Sortieren2_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Sortieren3_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Sortieren4_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Sortieren5_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Sortieren6_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Sortieren7_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Sortieren8_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Sortieren9_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Sortieren10_Click(object sender, RoutedEventArgs e)
         {
 
         }

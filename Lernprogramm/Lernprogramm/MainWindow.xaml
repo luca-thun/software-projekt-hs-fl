@@ -264,6 +264,375 @@
             </Button>
         </Grid>
 
+        <Grid x:Name="GridZahlenSortieren" Grid.Row="1" Background="#e1dddb" Visibility="Hidden">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="3*"/>
+                <RowDefinition Height="16*"/>
+                <RowDefinition Height="5*"/>
+            </Grid.RowDefinitions>
+
+            <Border    Grid.ColumnSpan="3"
+                       BorderThickness="1"
+                       CornerRadius="10"
+                       Background="#3B3838"
+                       BorderBrush="#3B3838"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                       Width="600"
+                       Height="40">
+
+                <TextBlock Text="Sortiere die Zahlen! Beginne mit der kleinsten Zahl."
+                           FontSize="24"
+                           TextAlignment="Center"
+                           Foreground="White">
+                </TextBlock>
+            </Border>
+
+            <Grid Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <Button x:Name="Sortieren1" Content="Zahl1" Grid.Row="0" Grid.Column="0"
+                        Foreground="Black"
+                        FontSize="28"
+                        FontWeight="Medium"
+                        
+                        Click="Sortieren1_Click">
+
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Background" Value="#E66A6A"/>
+                            <Setter Property="Cursor" Value="Hand"/>
+
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#F0A2A2"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Width="100" Height="100"
+                                    CornerRadius="24"
+                                    Background="{TemplateBinding Background}">
+                                <ContentPresenter VerticalAlignment="Center"
+                                                  HorizontalAlignment="Center">
+                                </ContentPresenter>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+
+                <Button x:Name="Sortieren2" Content="Zahl2" Grid.Row="0" Grid.Column="1"
+                        Foreground="Black"
+                        FontSize="28"
+                        FontWeight="Medium"
+                        
+                        Click="Sortieren2_Click">
+
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Background" Value="#FDFD87"/>
+                            <Setter Property="Cursor" Value="Hand"/>
+
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#FFFEBA"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Width="100" Height="100"
+                                    CornerRadius="24"
+                                    Background="{TemplateBinding Background}">
+                                <ContentPresenter VerticalAlignment="Center"
+                                                  HorizontalAlignment="Center">
+                                </ContentPresenter>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+
+                <Button x:Name="Sortieren3" Content="Zahl3" Grid.Row="0" Grid.Column="2"
+                        Foreground="Black"
+                        FontSize="28"
+                        FontWeight="Medium"
+                        
+                        Click="Sortieren3_Click">
+
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Background" Value="#68EE7E"/>
+                            <Setter Property="Cursor" Value="Hand"/>
+
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#97F3A6"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Width="100" Height="100"
+                                    CornerRadius="24"
+                                    Background="{TemplateBinding Background}">
+                                <ContentPresenter VerticalAlignment="Center"
+                                                  HorizontalAlignment="Center">
+                                </ContentPresenter>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+
+                <Button x:Name="Sortieren4" Content="Zahl4" Grid.Row="0" Grid.Column="3"
+                        Foreground="Black"
+                        FontSize="28"
+                        FontWeight="Medium"
+                        
+                        Click="Sortieren4_Click">
+
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Background" Value="#8F94F5"/>
+                            <Setter Property="Cursor" Value="Hand"/>
+
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#B2B5F8"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Width="100" Height="100"
+                                    CornerRadius="24"
+                                    Background="{TemplateBinding Background}">
+                                <ContentPresenter VerticalAlignment="Center"
+                                                  HorizontalAlignment="Center">
+                                </ContentPresenter>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+
+                <Button x:Name="Sortieren5" Content="Zahl5" Grid.Row="0" Grid.Column="4"
+                        Foreground="Black"
+                        FontSize="28"
+                        FontWeight="Medium"
+                        
+                        Click="Sortieren5_Click">
+
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Background" Value="#D791F3"/>
+                            <Setter Property="Cursor" Value="Hand"/>
+
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#DEA5F5"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Width="100" Height="100"
+                                    CornerRadius="24"
+                                    Background="{TemplateBinding Background}">
+                                <ContentPresenter VerticalAlignment="Center"
+                                                  HorizontalAlignment="Center">
+                                </ContentPresenter>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+
+                <Button x:Name="Sortieren6" Content="Zahl6" Grid.Row="1" Grid.Column="0"
+                        Foreground="Black"
+                        FontSize="28"
+                        FontWeight="Medium"
+                        
+                        Click="Sortieren6_Click">
+
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Background" Value="#EE9696"/>
+                            <Setter Property="Cursor" Value="Hand"/>
+
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#F4BEBE"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Width="100" Height="100"
+                                    CornerRadius="24"
+                                    Background="{TemplateBinding Background}">
+                                <ContentPresenter VerticalAlignment="Center"
+                                                  HorizontalAlignment="Center">
+                                </ContentPresenter>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+
+                <Button x:Name="Sortieren7" Content="Zahl7" Grid.Row="1" Grid.Column="1"
+                        Foreground="Black"
+                        FontSize="28"
+                        FontWeight="Medium"
+                        
+                        Click="Sortieren7_Click">
+
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Background" Value="#FFFEA4"/>
+                            <Setter Property="Cursor" Value="Hand"/>
+
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#FFFFCD"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Width="100" Height="100"
+                                    CornerRadius="24"
+                                    Background="{TemplateBinding Background}">
+                                <ContentPresenter VerticalAlignment="Center"
+                                                  HorizontalAlignment="Center">
+                                </ContentPresenter>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+
+                <Button x:Name="Sortieren8" Content="Zahl8" Grid.Row="1" Grid.Column="2"
+                        Foreground="Black"
+                        FontSize="28"
+                        FontWeight="Medium"
+                        
+                        Click="Sortieren8_Click">
+
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Background" Value="#CEF490"/>
+                            <Setter Property="Cursor" Value="Hand"/>
+
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#DCF7AF"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Width="100" Height="100"
+                                    CornerRadius="24"
+                                    Background="{TemplateBinding Background}">
+                                <ContentPresenter VerticalAlignment="Center"
+                                                  HorizontalAlignment="Center">
+                                </ContentPresenter>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+
+                <Button x:Name="Sortieren9" Content="Zahl9" Grid.Row="1" Grid.Column="3"
+                        Foreground="Black"
+                        FontSize="28"
+                        FontWeight="Medium"
+                        
+                        Click="Sortieren9_Click">
+
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Background" Value="#92E7F2"/>
+                            <Setter Property="Cursor" Value="Hand"/>
+
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#B4EEF6"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Width="100" Height="100"
+                                    CornerRadius="24"
+                                    Background="{TemplateBinding Background}">
+                                <ContentPresenter VerticalAlignment="Center"
+                                                  HorizontalAlignment="Center">
+                                </ContentPresenter>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+
+                <Button x:Name="Sortieren10" Content="Zahl10" Grid.Row="1" Grid.Column="4"
+                        Foreground="Black"
+                        FontSize="28"
+                        FontWeight="Medium"
+                        
+                        Click="Sortieren10_Click">
+
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Background" Value="#F8B6E8"/>
+                            <Setter Property="Cursor" Value="Hand"/>
+
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#FBD1F1"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Width="100" Height="100"
+                                    CornerRadius="24"
+                                    Background="{TemplateBinding Background}">
+                                <ContentPresenter VerticalAlignment="Center"
+                                                  HorizontalAlignment="Center">
+                                </ContentPresenter>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+            </Grid>
+        </Grid>
+
         <Grid x:Name="GridSchwierigkeit" Grid.Row="1" Background="#e1dddb" Visibility="Hidden"> <!--Auswahlmöglichkeiten zum Schwierigkeitsgrad-->
             <Grid.RowDefinitions>
                 <RowDefinition/>
@@ -521,6 +890,7 @@
                 </Button.Template>
             </Button>
         </Grid>
+        
         <Grid x:Name="GridRechenprogramm" Grid.Row="1" Background="#e1dddb" Visibility="Hidden">
             <Grid.RowDefinitions>
                 <RowDefinition />
@@ -553,7 +923,6 @@
                            TextAlignment="Center"
                            Foreground="White">
                 </TextBlock>
-
             </Border>
 
             <Border    Grid.Row="2" Grid.Column="2"
@@ -572,7 +941,6 @@
                            TextAlignment="Center"
                            Foreground="White">
                 </TextBlock>
-
             </Border>
 
             <Border    Grid.Row="2" Grid.Column="1"
@@ -590,7 +958,6 @@
                            TextAlignment="Center"
                            Foreground="White">
                 </TextBlock>
-
             </Border>
 
             <Border    Grid.Row="2" Grid.Column="1"
@@ -602,7 +969,6 @@
                        VerticalAlignment="Center"
                        Width="400"
                        Height="4">
-
             </Border>
 
             <TextBox x:Name="ErgebnisEingabe" Grid.Row="3" Grid.Column="2"
@@ -718,6 +1084,135 @@
                     </ControlTemplate>
                 </Button.Template>
 
+            </Button>
+        </Grid>
+
+        <Grid x:Name="GridMinispiel" Grid.Row="1" Background="#e1dddb" Visibility="Hidden">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition Height="5*"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Border    Grid.ColumnSpan="3"
+                       BorderThickness="1"
+                       CornerRadius="10"
+                       Background="#3B3838"
+                       BorderBrush="#3B3838"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                       Width="500"
+                       Height="40">
+
+                <TextBlock Text="Welcher Weg führt zum Ziel?"
+                           FontSize="24"
+                           TextAlignment="Center"
+                           Foreground="White">
+                </TextBlock>
+            </Border>
+
+            <Button x:Name="Weg1" Content="1" Grid.Row="2"
+                    Foreground="White"
+                    FontSize="22"
+                    FontWeight="Medium"
+                    
+                    Click="Weg1_Click">
+
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="#910D0D"/>
+                        <Setter Property="Cursor" Value="Hand"/>
+
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#B41010"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Width="200" Height="40"
+                                    CornerRadius="18"
+                                    Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center"
+                                                  HorizontalAlignment="Center">
+                            </ContentPresenter>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+
+            <Button x:Name="Weg2" Content="2" Grid.Row="2" Grid.Column="1"
+                    Foreground="White"
+                    FontSize="22"
+                    FontWeight="Medium"
+                    
+                    Click="Weg2_Click">
+
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="#910D0D"/>
+                        <Setter Property="Cursor" Value="Hand"/>
+
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#B41010"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Width="200" Height="40"
+                                    CornerRadius="18"
+                                    Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center"
+                                                  HorizontalAlignment="Center">
+                            </ContentPresenter>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+
+            <Button x:Name="Weg3" Content="3" Grid.Row="2" Grid.Column="2"
+                    Foreground="White"
+                    FontSize="22"
+                    FontWeight="Medium"
+                    
+                    Click="Weg3_Click">
+
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="#910D0D"/>
+                        <Setter Property="Cursor" Value="Hand"/>
+
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#B41010"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Width="200" Height="40"
+                                    CornerRadius="18"
+                                    Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center"
+                                                  HorizontalAlignment="Center">
+                            </ContentPresenter>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
             </Button>
         </Grid>
     </Grid>
