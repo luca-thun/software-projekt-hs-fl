@@ -656,7 +656,7 @@
                            Width="50"
                            Height="50">
 
-                    <TextBlock Text="0"
+                    <TextBlock x:Name="LeisteText1" Text="0"
                                FontSize="24"
                                TextAlignment="Center"
                                VerticalAlignment="Center"
@@ -674,7 +674,7 @@
                            Width="50"
                            Height="50">
 
-                    <TextBlock Text="0"
+                    <TextBlock x:Name="LeisteText2" Text="0"
                                FontSize="24"
                                TextAlignment="Center"
                                VerticalAlignment="Center"
@@ -692,7 +692,7 @@
                            Width="50"
                            Height="50">
 
-                    <TextBlock Text="0"
+                    <TextBlock x:Name="LeisteText3" Text="0"
                                FontSize="24"
                                TextAlignment="Center"
                                VerticalAlignment="Center"
@@ -710,7 +710,7 @@
                            Width="50"
                            Height="50">
 
-                    <TextBlock Text="0"
+                    <TextBlock x:Name="LeisteText4" Text="0"
                                FontSize="24"
                                TextAlignment="Center"
                                VerticalAlignment="Center"
@@ -728,7 +728,7 @@
                            Width="50"
                            Height="50">
 
-                    <TextBlock Text="0"
+                    <TextBlock x:Name="LeisteText5" Text="0"
                                FontSize="24"
                                TextAlignment="Center"
                                VerticalAlignment="Center"
@@ -746,7 +746,7 @@
                            Width="50"
                            Height="50">
 
-                    <TextBlock Text="0"
+                    <TextBlock x:Name="LeisteText6" Text="0"
                                FontSize="24"
                                TextAlignment="Center"
                                VerticalAlignment="Center"
@@ -764,7 +764,7 @@
                            Width="50"
                            Height="50">
 
-                    <TextBlock Text="0"
+                    <TextBlock x:Name="LeisteText7" Text="0"
                                FontSize="24"
                                TextAlignment="Center"
                                VerticalAlignment="Center"
@@ -782,7 +782,7 @@
                            Width="50"
                            Height="50">
 
-                    <TextBlock Text="0"
+                    <TextBlock x:Name="LeisteText8" Text="0"
                                FontSize="24"
                                TextAlignment="Center"
                                VerticalAlignment="Center"
@@ -800,7 +800,7 @@
                            Width="50"
                            Height="50">
 
-                    <TextBlock Text="0"
+                    <TextBlock x:Name="LeisteText9" Text="0"
                                FontSize="24"
                                TextAlignment="Center"
                                VerticalAlignment="Center"
@@ -818,7 +818,7 @@
                            Width="50"
                            Height="50">
 
-                    <TextBlock Text="0"
+                    <TextBlock x:Name="LeisteText10" Text="0"
                                FontSize="24"
                                TextAlignment="Center"
                                VerticalAlignment="Center"

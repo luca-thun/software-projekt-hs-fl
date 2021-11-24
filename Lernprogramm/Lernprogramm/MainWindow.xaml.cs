@@ -42,6 +42,8 @@ namespace Lernprogramm
         int[] falschGerechnet2 = new int[20];
         int array2Zähler;
 
+        int[] SortierenArray = new int[10];
+
         int zahlenSortieren1;
         int zahlenSortieren2;
         int zahlenSortieren3;
@@ -52,6 +54,9 @@ namespace Lernprogramm
         int zahlenSortieren8;
         int zahlenSortieren9;
         int zahlenSortieren10;
+
+        int sortierenArrayDurchlauf;
+        int LeisteZähler;
 
         public void RechenTraining()
         {
@@ -137,6 +142,8 @@ namespace Lernprogramm
             zahlenSortieren8 = 0;
             zahlenSortieren9 = 0;
             zahlenSortieren10 = 0;
+            sortierenArrayDurchlauf = 0;
+            LeisteZähler = 0;
         }
 
         private void Start_Click(object sender, RoutedEventArgs e)
@@ -199,6 +206,28 @@ namespace Lernprogramm
             GridZahlenSortieren.Visibility = Visibility.Visible;
             zahlenSortierenGenerieren();
 
+            Sortieren1.Visibility = Visibility.Visible;
+            Sortieren2.Visibility = Visibility.Visible;
+            Sortieren3.Visibility = Visibility.Visible;
+            Sortieren4.Visibility = Visibility.Visible;
+            Sortieren5.Visibility = Visibility.Visible;
+            Sortieren6.Visibility = Visibility.Visible;
+            Sortieren7.Visibility = Visibility.Visible;
+            Sortieren8.Visibility = Visibility.Visible;
+            Sortieren9.Visibility = Visibility.Visible;
+            Sortieren10.Visibility = Visibility.Visible;
+
+            LeisteSortieren1.Visibility = Visibility.Hidden;
+            LeisteSortieren2.Visibility = Visibility.Hidden;
+            LeisteSortieren3.Visibility = Visibility.Hidden;
+            LeisteSortieren4.Visibility = Visibility.Hidden;
+            LeisteSortieren5.Visibility = Visibility.Hidden;
+            LeisteSortieren6.Visibility = Visibility.Hidden;
+            LeisteSortieren7.Visibility = Visibility.Hidden;
+            LeisteSortieren8.Visibility = Visibility.Hidden;
+            LeisteSortieren9.Visibility = Visibility.Hidden;
+            LeisteSortieren10.Visibility = Visibility.Hidden;
+
             Menu.Visibility = Visibility.Visible;
         }
 
@@ -235,6 +264,19 @@ namespace Lernprogramm
             Sortieren8.Content = Convert.ToString(zahlenSortieren8);
             Sortieren9.Content = Convert.ToString(zahlenSortieren9);
             Sortieren10.Content = Convert.ToString(zahlenSortieren10);
+
+            SortierenArray[0] = zahlenSortieren1;
+            SortierenArray[1] = zahlenSortieren2;
+            SortierenArray[2] = zahlenSortieren3;
+            SortierenArray[3] = zahlenSortieren4;
+            SortierenArray[4] = zahlenSortieren5;
+            SortierenArray[5] = zahlenSortieren6;
+            SortierenArray[6] = zahlenSortieren7;
+            SortierenArray[7] = zahlenSortieren8;
+            SortierenArray[8] = zahlenSortieren9;
+            SortierenArray[9] = zahlenSortieren10;
+
+            Array.Sort(SortierenArray);
         }
 
         private void Einfach_Click(object sender, RoutedEventArgs e)
@@ -396,52 +438,181 @@ namespace Lernprogramm
 
         private void Sortieren1_Click(object sender, RoutedEventArgs e)
         {
-
+            int zahlCheck = Convert.ToInt32(Sortieren1.Content);
+            bool check = SortierenCheck(zahlCheck);
+            if (check == true)
+            {
+                Sortieren1.Visibility = Visibility.Hidden;
+                LeisteAktualisieren(Convert.ToInt32(Sortieren1.Content));
+            }
         }
 
         private void Sortieren2_Click(object sender, RoutedEventArgs e)
         {
-
+            int zahlCheck = Convert.ToInt32(Sortieren2.Content);
+            bool check = SortierenCheck(zahlCheck);
+            if (check == true)
+            {
+                Sortieren2.Visibility = Visibility.Hidden;
+                LeisteAktualisieren(Convert.ToInt32(Sortieren2.Content));
+            }
         }
 
         private void Sortieren3_Click(object sender, RoutedEventArgs e)
         {
-
+            int zahlCheck = Convert.ToInt32(Sortieren3.Content);
+            bool check = SortierenCheck(zahlCheck);
+            if (check == true)
+            {
+                Sortieren3.Visibility = Visibility.Hidden;
+                LeisteAktualisieren(Convert.ToInt32(Sortieren3.Content));
+            }
         }
 
         private void Sortieren4_Click(object sender, RoutedEventArgs e)
         {
-
+            int zahlCheck = Convert.ToInt32(Sortieren4.Content);
+            bool check = SortierenCheck(zahlCheck);
+            if (check == true)
+            {
+                Sortieren4.Visibility = Visibility.Hidden;
+                LeisteAktualisieren(Convert.ToInt32(Sortieren4.Content));
+            }
         }
 
         private void Sortieren5_Click(object sender, RoutedEventArgs e)
         {
-
+            int zahlCheck = Convert.ToInt32(Sortieren5.Content);
+            bool check = SortierenCheck(zahlCheck);
+            if (check == true)
+            {
+                Sortieren5.Visibility = Visibility.Hidden;
+                LeisteAktualisieren(Convert.ToInt32(Sortieren5.Content));
+            }
         }
 
         private void Sortieren6_Click(object sender, RoutedEventArgs e)
         {
-
+            int zahlCheck = Convert.ToInt32(Sortieren6.Content);
+            bool check = SortierenCheck(zahlCheck);
+            if (check == true)
+            {
+                Sortieren6.Visibility = Visibility.Hidden;
+                LeisteAktualisieren(Convert.ToInt32(Sortieren6.Content));
+            }
         }
 
         private void Sortieren7_Click(object sender, RoutedEventArgs e)
         {
-
+            int zahlCheck = Convert.ToInt32(Sortieren7.Content);
+            bool check = SortierenCheck(zahlCheck);
+            if (check == true)
+            {
+                Sortieren7.Visibility = Visibility.Hidden;
+                LeisteAktualisieren(Convert.ToInt32(Sortieren7.Content));
+            }
         }
 
         private void Sortieren8_Click(object sender, RoutedEventArgs e)
         {
-
+            int zahlCheck = Convert.ToInt32(Sortieren8.Content);
+            bool check = SortierenCheck(zahlCheck);
+            if (check == true)
+            {
+                Sortieren8.Visibility = Visibility.Hidden;
+                LeisteAktualisieren(Convert.ToInt32(Sortieren8.Content));
+            }
         }
 
         private void Sortieren9_Click(object sender, RoutedEventArgs e)
         {
-
+            int zahlCheck = Convert.ToInt32(Sortieren9.Content);
+            bool check = SortierenCheck(zahlCheck);
+            if (check == true)
+            {
+                Sortieren9.Visibility = Visibility.Hidden;
+                LeisteAktualisieren(Convert.ToInt32(Sortieren9.Content));
+            }
         }
 
         private void Sortieren10_Click(object sender, RoutedEventArgs e)
         {
-
+            int zahlCheck = Convert.ToInt32(Sortieren10.Content);
+            bool check = SortierenCheck(zahlCheck);
+            if (check == true)
+            {
+                Sortieren10.Visibility = Visibility.Hidden;
+                LeisteAktualisieren(Convert.ToInt32(Sortieren10.Content));
+            }
         }
+
+        public bool SortierenCheck(int zahl)
+        {
+            if (zahl == SortierenArray[sortierenArrayDurchlauf])
+            {
+                sortierenArrayDurchlauf++;
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public void LeisteAktualisieren(int zahl)
+        {
+            if (LeisteZähler == 0)
+            {
+                LeisteText1.Text = Convert.ToString(zahl);
+                LeisteSortieren1.Visibility = Visibility.Visible;
+            }
+            if (LeisteZähler == 1)
+            {
+                LeisteText2.Text = Convert.ToString(zahl);
+                LeisteSortieren2.Visibility = Visibility.Visible;
+            }
+            if (LeisteZähler == 2)
+            {
+                LeisteText3.Text = Convert.ToString(zahl);
+                LeisteSortieren3.Visibility = Visibility.Visible;
+            }
+            if (LeisteZähler == 3)
+            {
+                LeisteText4.Text = Convert.ToString(zahl);
+                LeisteSortieren4.Visibility = Visibility.Visible;
+            }
+            if (LeisteZähler == 4)
+            {
+                LeisteText5.Text = Convert.ToString(zahl);
+                LeisteSortieren5.Visibility = Visibility.Visible;
+            }
+            if (LeisteZähler == 5)
+            {
+                LeisteText6.Text = Convert.ToString(zahl);
+                LeisteSortieren6.Visibility = Visibility.Visible;
+            }
+            if (LeisteZähler == 6)
+            {
+                LeisteText7.Text = Convert.ToString(zahl);
+                LeisteSortieren7.Visibility = Visibility.Visible;
+            }
+            if (LeisteZähler == 7)
+            {
+                LeisteText8.Text = Convert.ToString(zahl);
+                LeisteSortieren8.Visibility = Visibility.Visible;
+            }
+            if (LeisteZähler == 8)
+            {
+                LeisteText9.Text = Convert.ToString(zahl);
+                LeisteSortieren9.Visibility = Visibility.Visible;
+            }
+            if (LeisteZähler == 9)
+            {
+                LeisteText10.Text = Convert.ToString(zahl);
+                LeisteSortieren10.Visibility = Visibility.Visible;
+            }
+            LeisteZähler++;
+        }
+
     }
 }
