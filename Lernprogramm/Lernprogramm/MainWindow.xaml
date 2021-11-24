@@ -631,6 +631,201 @@
                     </Button.Template>
                 </Button>
             </Grid>
+
+            <Grid Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <Border    x:Name="LeisteSortieren1" Grid.Column="0" Visibility="Hidden"
+                           BorderThickness="1"
+                           CornerRadius="10"
+                           Background="#3B3838"
+                           BorderBrush="#3B3838"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Center"
+                           Width="50"
+                           Height="50">
+
+                    <TextBlock Text="0"
+                               FontSize="24"
+                               TextAlignment="Center"
+                               VerticalAlignment="Center"
+                               Foreground="White">
+                    </TextBlock>
+                </Border>
+
+                <Border    x:Name="LeisteSortieren2" Grid.Column="1" Visibility="Hidden"
+                           BorderThickness="1"
+                           CornerRadius="10"
+                           Background="#3B3838"
+                           BorderBrush="#3B3838"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Center"
+                           Width="50"
+                           Height="50">
+
+                    <TextBlock Text="0"
+                               FontSize="24"
+                               TextAlignment="Center"
+                               VerticalAlignment="Center"
+                               Foreground="White">
+                    </TextBlock>
+                </Border>
+
+                <Border    x:Name="LeisteSortieren3" Grid.Column="2" Visibility="Hidden"
+                           BorderThickness="1"
+                           CornerRadius="10"
+                           Background="#3B3838"
+                           BorderBrush="#3B3838"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Center"
+                           Width="50"
+                           Height="50">
+
+                    <TextBlock Text="0"
+                               FontSize="24"
+                               TextAlignment="Center"
+                               VerticalAlignment="Center"
+                               Foreground="White">
+                    </TextBlock>
+                </Border>
+
+                <Border    x:Name="LeisteSortieren4" Grid.Column="3" Visibility="Hidden"
+                           BorderThickness="1"
+                           CornerRadius="10"
+                           Background="#3B3838"
+                           BorderBrush="#3B3838"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Center"
+                           Width="50"
+                           Height="50">
+
+                    <TextBlock Text="0"
+                               FontSize="24"
+                               TextAlignment="Center"
+                               VerticalAlignment="Center"
+                               Foreground="White">
+                    </TextBlock>
+                </Border>
+
+                <Border    x:Name="LeisteSortieren5" Grid.Column="4" Visibility="Hidden"
+                           BorderThickness="1"
+                           CornerRadius="10"
+                           Background="#3B3838"
+                           BorderBrush="#3B3838"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Center"
+                           Width="50"
+                           Height="50">
+
+                    <TextBlock Text="0"
+                               FontSize="24"
+                               TextAlignment="Center"
+                               VerticalAlignment="Center"
+                               Foreground="White">
+                    </TextBlock>
+                </Border>
+
+                <Border    x:Name="LeisteSortieren6" Grid.Column="5" Visibility="Hidden"
+                           BorderThickness="1"
+                           CornerRadius="10"
+                           Background="#3B3838"
+                           BorderBrush="#3B3838"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Center"
+                           Width="50"
+                           Height="50">
+
+                    <TextBlock Text="0"
+                               FontSize="24"
+                               TextAlignment="Center"
+                               VerticalAlignment="Center"
+                               Foreground="White">
+                    </TextBlock>
+                </Border>
+
+                <Border    x:Name="LeisteSortieren7" Grid.Column="6" Visibility="Hidden"
+                           BorderThickness="1"
+                           CornerRadius="10"
+                           Background="#3B3838"
+                           BorderBrush="#3B3838"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Center"
+                           Width="50"
+                           Height="50">
+
+                    <TextBlock Text="0"
+                               FontSize="24"
+                               TextAlignment="Center"
+                               VerticalAlignment="Center"
+                               Foreground="White">
+                    </TextBlock>
+                </Border>
+
+                <Border    x:Name="LeisteSortieren8" Grid.Column="7" Visibility="Hidden"
+                           BorderThickness="1"
+                           CornerRadius="10"
+                           Background="#3B3838"
+                           BorderBrush="#3B3838"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Center"
+                           Width="50"
+                           Height="50">
+
+                    <TextBlock Text="0"
+                               FontSize="24"
+                               TextAlignment="Center"
+                               VerticalAlignment="Center"
+                               Foreground="White">
+                    </TextBlock>
+                </Border>
+
+                <Border    x:Name="LeisteSortieren9" Grid.Column="8" Visibility="Hidden"
+                           BorderThickness="1"
+                           CornerRadius="10"
+                           Background="#3B3838"
+                           BorderBrush="#3B3838"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Center"
+                           Width="50"
+                           Height="50">
+
+                    <TextBlock Text="0"
+                               FontSize="24"
+                               TextAlignment="Center"
+                               VerticalAlignment="Center"
+                               Foreground="White">
+                    </TextBlock>
+                </Border>
+
+                <Border    x:Name="LeisteSortieren10" Grid.Column="9" Visibility="Hidden"
+                           BorderThickness="1"
+                           CornerRadius="10"
+                           Background="#3B3838"
+                           BorderBrush="#3B3838"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Center"
+                           Width="50"
+                           Height="50">
+
+                    <TextBlock Text="0"
+                               FontSize="24"
+                               TextAlignment="Center"
+                               VerticalAlignment="Center"
+                               Foreground="White">
+                    </TextBlock>
+                </Border>
+            </Grid>
         </Grid>
 
         <Grid x:Name="GridSchwierigkeit" Grid.Row="1" Background="#e1dddb" Visibility="Hidden"> <!--Auswahlmöglichkeiten zum Schwierigkeitsgrad-->

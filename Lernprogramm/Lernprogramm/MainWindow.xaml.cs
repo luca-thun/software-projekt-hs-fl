@@ -42,6 +42,17 @@ namespace Lernprogramm
         int[] falschGerechnet2 = new int[20];
         int array2Zähler;
 
+        int zahlenSortieren1;
+        int zahlenSortieren2;
+        int zahlenSortieren3;
+        int zahlenSortieren4;
+        int zahlenSortieren5;
+        int zahlenSortieren6;
+        int zahlenSortieren7;
+        int zahlenSortieren8;
+        int zahlenSortieren9;
+        int zahlenSortieren10;
+
         public void RechenTraining()
         {
             if (rechenOperator == '+')
@@ -116,6 +127,16 @@ namespace Lernprogramm
             zahl1 = 0;
             zahl2 = 0;
             maxZahl2 = 0;
+            zahlenSortieren1 = 0;
+            zahlenSortieren2 = 0;
+            zahlenSortieren3 = 0;
+            zahlenSortieren4 = 0;
+            zahlenSortieren5 = 0;
+            zahlenSortieren6 = 0;
+            zahlenSortieren7 = 0;
+            zahlenSortieren8 = 0;
+            zahlenSortieren9 = 0;
+            zahlenSortieren10 = 0;
         }
 
         private void Start_Click(object sender, RoutedEventArgs e)
@@ -176,8 +197,44 @@ namespace Lernprogramm
             Titel.Text = "ZAHLEN SORTIEREN";
             AllesVerstecken();
             GridZahlenSortieren.Visibility = Visibility.Visible;
+            zahlenSortierenGenerieren();
 
             Menu.Visibility = Visibility.Visible;
+        }
+
+        public void zahlenSortierenGenerieren()
+        {
+            zahlenSortieren1 = zufall.Next(1, 101);
+
+            while (zahlenSortieren2 == 0 || zahlenSortieren2 == zahlenSortieren1)
+                zahlenSortieren2 = zufall.Next(1, 101);
+            while (zahlenSortieren3 == 0 || zahlenSortieren3 == zahlenSortieren1 || zahlenSortieren3 == zahlenSortieren2)
+                zahlenSortieren3 = zufall.Next(1, 101);
+            while (zahlenSortieren4 == 0 || zahlenSortieren4 == zahlenSortieren1 || zahlenSortieren4 == zahlenSortieren2 || zahlenSortieren4 == zahlenSortieren3)
+                zahlenSortieren4 = zufall.Next(1, 101);
+            while (zahlenSortieren5 == 0 || zahlenSortieren5 == zahlenSortieren1 || zahlenSortieren5 == zahlenSortieren2 || zahlenSortieren5 == zahlenSortieren3 || zahlenSortieren5 == zahlenSortieren4)
+                zahlenSortieren5 = zufall.Next(1, 101);
+            while (zahlenSortieren6 == 0 || zahlenSortieren6 == zahlenSortieren1 || zahlenSortieren6 == zahlenSortieren2 || zahlenSortieren6 == zahlenSortieren3 || zahlenSortieren6 == zahlenSortieren4 || zahlenSortieren6 == zahlenSortieren5)
+                zahlenSortieren6 = zufall.Next(1, 101);
+            while (zahlenSortieren7 == 0 || zahlenSortieren7 == zahlenSortieren1 || zahlenSortieren7 == zahlenSortieren2 || zahlenSortieren7 == zahlenSortieren3 || zahlenSortieren7 == zahlenSortieren4 || zahlenSortieren7 == zahlenSortieren5 || zahlenSortieren7 == zahlenSortieren6)
+                zahlenSortieren7 = zufall.Next(1, 101);
+            while (zahlenSortieren8 == 0 || zahlenSortieren8 == zahlenSortieren1 || zahlenSortieren8 == zahlenSortieren2 || zahlenSortieren8 == zahlenSortieren3 || zahlenSortieren8 == zahlenSortieren4 || zahlenSortieren8 == zahlenSortieren5 || zahlenSortieren8 == zahlenSortieren6 || zahlenSortieren8 == zahlenSortieren7)
+                zahlenSortieren8 = zufall.Next(1, 101);
+            while (zahlenSortieren9 == 0 || zahlenSortieren9 == zahlenSortieren1 || zahlenSortieren9 == zahlenSortieren2 || zahlenSortieren9 == zahlenSortieren3 || zahlenSortieren9 == zahlenSortieren4 || zahlenSortieren9 == zahlenSortieren5 || zahlenSortieren9 == zahlenSortieren6 || zahlenSortieren9 == zahlenSortieren7 || zahlenSortieren9 == zahlenSortieren8)
+                zahlenSortieren9 = zufall.Next(1, 101);
+            while (zahlenSortieren10 == 0 || zahlenSortieren10 == zahlenSortieren1 || zahlenSortieren10 == zahlenSortieren2 || zahlenSortieren10 == zahlenSortieren3 || zahlenSortieren10 == zahlenSortieren4 || zahlenSortieren10 == zahlenSortieren5 || zahlenSortieren10 == zahlenSortieren6 || zahlenSortieren10 == zahlenSortieren7 || zahlenSortieren10 == zahlenSortieren8 || zahlenSortieren10 == zahlenSortieren9)
+                zahlenSortieren10 = zufall.Next(1, 101);
+
+            Sortieren1.Content = Convert.ToString(zahlenSortieren1);
+            Sortieren2.Content = Convert.ToString(zahlenSortieren2);
+            Sortieren3.Content = Convert.ToString(zahlenSortieren3);
+            Sortieren4.Content = Convert.ToString(zahlenSortieren4);
+            Sortieren5.Content = Convert.ToString(zahlenSortieren5);
+            Sortieren6.Content = Convert.ToString(zahlenSortieren6);
+            Sortieren7.Content = Convert.ToString(zahlenSortieren7);
+            Sortieren8.Content = Convert.ToString(zahlenSortieren8);
+            Sortieren9.Content = Convert.ToString(zahlenSortieren9);
+            Sortieren10.Content = Convert.ToString(zahlenSortieren10);
         }
 
         private void Einfach_Click(object sender, RoutedEventArgs e)
