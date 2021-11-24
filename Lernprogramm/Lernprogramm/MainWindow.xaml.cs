@@ -37,10 +37,6 @@ namespace Lernprogramm
         int zahl1;                      //Wert der oberen Zahl im Rechentableau
         int zahl2;                      //Wert der unteren Zahl im Rechentableau
         int maxZahl2;                   //Nimmt den maximalen Wert an, den die zweite Zahl bekommen darf. Beispiel: Bekommt zahl1 den Wert 92 zufällig zugeteilt, darf zahl2 beim plusrechnen maximal den wert 8 bekommen.
-        int[] falschGerechnet1 = new int[20];
-        int array1Zähler;
-        int[] falschGerechnet2 = new int[20];
-        int array2Zähler;
 
         int[] SortierenArray = new int[10];
 
@@ -107,7 +103,23 @@ namespace Lernprogramm
 
         public void MinusTraining()
         {
-
+            if (schwierigkeitsgrad == 1)
+            {
+                zahl1 = zufall.Next(2, 10);
+                zahl2 = zufall.Next(1, zahl1);
+            }
+            if (schwierigkeitsgrad == 2)
+            {
+                zahl1 = zufall.Next(10, 100);
+                zahl2 = zufall.Next(1, 10);
+            }
+            if (schwierigkeitsgrad == 3)
+            {
+                zahl1 = zufall.Next(11, 101);
+                zahl2 = zufall.Next(10, zahl1);
+            }
+            ObereZahl.Text = Convert.ToString(zahl1);
+            UntereZahl.Text = Convert.ToString(zahl2);
         }
 
         public void AllesVerstecken()
@@ -307,6 +319,7 @@ namespace Lernprogramm
         {
             AllesVerstecken();
             GridRechenprogramm.Visibility = Visibility.Visible;
+            ÜbertragInfo.Visibility = Visibility.Visible;
 
             aufgabenmenge = 5;
             RechenTraining();
@@ -316,6 +329,7 @@ namespace Lernprogramm
         {
             AllesVerstecken();
             GridRechenprogramm.Visibility = Visibility.Visible;
+            ÜbertragInfo.Visibility = Visibility.Visible;
 
             aufgabenmenge = 15;
             RechenTraining();
@@ -325,6 +339,7 @@ namespace Lernprogramm
         {
             AllesVerstecken();
             GridRechenprogramm.Visibility = Visibility.Visible;
+            ÜbertragInfo.Visibility = Visibility.Visible;
 
             aufgabenmenge = 20;
             RechenTraining();
@@ -338,6 +353,10 @@ namespace Lernprogramm
 
         private void WeiterRechnen_Click(object sender, RoutedEventArgs e)
         {
+            ÜbertragInfo.Visibility = Visibility.Hidden;
+            Übertrag1.Content = "";
+            Übertrag2.Content = "";
+
             if (rechenOperator == '+' && rechenDurchlauf < aufgabenmenge)       //Das passiert beim Plusrechenen
             {
                 if (Convert.ToString(zahl1 + zahl2) == ErgebnisEingabe.Text)
@@ -356,11 +375,6 @@ namespace Lernprogramm
                     LobTextRechnen.Visibility = Visibility.Visible;
                     LobText.Text = "Leider nicht richtig!";
                     ErgebnisEingabe.Text = "";
-
-                    falschGerechnet1[array1Zähler] = zahl1;
-                    array1Zähler++;
-                    falschGerechnet2[array2Zähler] = zahl2;
-                    array1Zähler++;
 
                     rechenDurchlauf++;
 
@@ -387,24 +401,13 @@ namespace Lernprogramm
                     LobText.Text = "Leider nicht richtig!";
                     ErgebnisEingabe.Text = "";
 
-                    falschGerechnet1[array1Zähler] = zahl1;
-                    array1Zähler++;
-                    falschGerechnet2[array2Zähler] = zahl2;
-                    array1Zähler++;
-
                     rechenDurchlauf++;
 
                     RechenTraining();
                 }
             }
 
-            if (rechenDurchlauf == aufgabenmenge && falschGerechnet1[0] != 0)
-            {
-                ObereZahl.Text = Convert.ToString(falschGerechnet1[0]);
-                UntereZahl.Text = Convert.ToString(falschGerechnet2[0]);
-            }
-
-            if (rechenDurchlauf == aufgabenmenge && falschGerechnet1[0] == 0)
+            if (rechenDurchlauf == aufgabenmenge)
             {
                 Titel.Text = "LEISTUNGSÜBERSICHT";
                 AllesVerstecken();
@@ -614,5 +617,28 @@ namespace Lernprogramm
             LeisteZähler++;
         }
 
+        private void Übertrag1_Click(object sender, RoutedEventArgs e)
+        {
+            if (Übertrag1.Content == "")
+            {
+                Übertrag1.Content = "1";
+            }
+            else
+            {
+                Übertrag1.Content = "";
+            }
+        }
+
+        private void Übertrag2_Click(object sender, RoutedEventArgs e)
+        {
+            if (Übertrag2.Content == "")
+            {
+                Übertrag2.Content = "1";
+            }
+            else
+            {
+                Übertrag2.Content = "";
+            }
+        }
     }
 }

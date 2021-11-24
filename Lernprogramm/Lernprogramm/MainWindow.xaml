@@ -1088,9 +1088,9 @@
         
         <Grid x:Name="GridRechenprogramm" Grid.Row="1" Background="#e1dddb" Visibility="Hidden">
             <Grid.RowDefinitions>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="2*"/>
                 <RowDefinition />
-                <RowDefinition Height="2*"/>
-                <RowDefinition Height="2*"/>
                 <RowDefinition Height="2*"/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
@@ -1102,7 +1102,7 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
 
-            <Border    Grid.Row="1" Grid.Column="2"
+            <Border    Grid.Row="0" Grid.Column="2"
                        Grid.ColumnSpan="2"
                        BorderThickness="1"
                        CornerRadius="20"
@@ -1115,12 +1115,13 @@
 
                 <TextBlock x:Name="ObereZahl" Text="00"
                            FontSize="54"
-                           TextAlignment="Center"
+                           Margin="0,0,40,0"
+                           TextAlignment="Right"
                            Foreground="White">
                 </TextBlock>
             </Border>
 
-            <Border    Grid.Row="2" Grid.Column="2"
+            <Border    Grid.Row="1" Grid.Column="2"
                        Grid.ColumnSpan="2"
                        BorderThickness="1"
                        CornerRadius="20"
@@ -1133,12 +1134,13 @@
 
                 <TextBlock x:Name="UntereZahl" Text="00"
                            FontSize="54"
-                           TextAlignment="Center"
+                           Margin="0,0,40,0"
+                           TextAlignment="Right"
                            Foreground="White">
                 </TextBlock>
             </Border>
 
-            <Border    Grid.Row="2" Grid.Column="1"
+            <Border    Grid.Row="1" Grid.Column="1"
                        BorderThickness="1"
                        CornerRadius="20"
                        Background="#3B3838"
@@ -1155,13 +1157,104 @@
                 </TextBlock>
             </Border>
 
+            <Button     x:Name="Übertrag1" Content="" Grid.Row="2" Grid.Column="3"
+                        Foreground="White"
+                        FontSize="18"
+                        FontWeight="Medium"
+                        Width="25"
+                        Height="25"
+                        HorizontalAlignment="Left"
+                        Margin="3,0,0,0"
+                        
+                        Click="Übertrag1_Click">
+
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="#3B3838"/>
+                        <Setter Property="Cursor" Value="Hand"/>
+
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#7C7676"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border CornerRadius="8"
+                                    Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center"
+                                                  HorizontalAlignment="Center">
+                            </ContentPresenter>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+
+            <Button     x:Name="Übertrag2" Content="" Grid.Row="2" Grid.Column="2"
+                        Foreground="White"
+                        FontSize="18"
+                        FontWeight="Medium"
+                        Width="25"
+                        Height="25"
+                        HorizontalAlignment="Right"
+                        Margin="0,0,1,0"
+                        
+                        Click="Übertrag2_Click">
+
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="#3B3838"/>
+                        <Setter Property="Cursor" Value="Hand"/>
+
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#7C7676"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border CornerRadius="8"
+                                    Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center"
+                                                  HorizontalAlignment="Center">
+                            </ContentPresenter>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+
+            <Border    x:Name="ÜbertragInfo" Grid.Row="2" Grid.Column="3" Grid.ColumnSpan="2"
+                       BorderThickness="1"
+                       CornerRadius="6"
+                       Background="#3B3838"
+                       BorderBrush="#3B3838"
+                       HorizontalAlignment="Left"
+                       VerticalAlignment="Center"
+                       Width="250"
+                       Height="25"
+                       Margin="35,0,0,0">
+
+                <TextBlock Text="Du kannst die Kästchen als Übertrag nutzen"
+                           FontSize="12"
+                           TextAlignment="Center"
+                           VerticalAlignment="Center"
+                           Foreground="White">
+                </TextBlock>
+            </Border>
+
             <Border    Grid.Row="2" Grid.Column="1"
-                       Grid.RowSpan="2" Grid.ColumnSpan="3"
+                       Grid.ColumnSpan="3"
                        BorderThickness="1"
                        Background="#3B3838"
                        BorderBrush="#3B3838"
                        HorizontalAlignment="Center"
-                       VerticalAlignment="Center"
+                       VerticalAlignment="Bottom"
                        Width="400"
                        Height="4">
             </Border>
@@ -1169,7 +1262,8 @@
             <TextBox x:Name="ErgebnisEingabe" Grid.Row="3" Grid.Column="2"
                      Grid.ColumnSpan="2"
                      Width="200" Height="80"
-                     VerticalAlignment="Center" TextAlignment="Center"
+                     VerticalAlignment="Center" TextAlignment="Right"
+                     Padding="0,0,37,0"
                      FontSize="54"
                      PreviewTextInput="ErgebnisEingabe_PreviewTextInput"
                      MaxLength="3">
