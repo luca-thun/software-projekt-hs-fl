@@ -32,7 +32,7 @@ namespace Lernprogramm
         int rechenDurchlauf;            // Zählt mit wie viele Aufgaben schon gerechnet wurden
         int richtigGelöst;              // Zählt mit wie viele Aufgaben davon richtig gelöst wurden
 
-        Random zufall = new Random();
+        Random zufall = new Random();   //Zufallsgenerator für Plus, Minus und Zahlen Sortieren
 
         int zahl1;                      //Wert der oberen Zahl im Rechentableau
         int zahl2;                      //Wert der unteren Zahl im Rechentableau
@@ -52,7 +52,7 @@ namespace Lernprogramm
         int zahlenSortieren10;
 
         int sortierenArrayDurchlauf;
-        int LeisteZähler;
+        int leisteZähler;
 
         public void RechenTraining()
         {
@@ -132,6 +132,7 @@ namespace Lernprogramm
             GridLeistungsübersicht.Visibility = Visibility.Hidden;
             GridMinispiel.Visibility = Visibility.Hidden;
             GridZahlenSortieren.Visibility = Visibility.Hidden;
+            LobTextRechnen.Visibility = Visibility.Hidden;
         }
 
         public void VariablenZurücksetzen()
@@ -155,7 +156,7 @@ namespace Lernprogramm
             zahlenSortieren9 = 0;
             zahlenSortieren10 = 0;
             sortierenArrayDurchlauf = 0;
-            LeisteZähler = 0;
+            leisteZähler = 0;
         }
 
         private void Start_Click(object sender, RoutedEventArgs e)
@@ -209,86 +210,6 @@ namespace Lernprogramm
 
             Menu.Visibility = Visibility.Visible;
             rechenOperator = '-';
-        }
-
-        private void ZahlenSortieren_Click(object sender, RoutedEventArgs e)
-        {
-            Titel.Text = "ZAHLEN SORTIEREN";
-            AllesVerstecken();
-            GridZahlenSortieren.Visibility = Visibility.Visible;
-            zahlenSortierenGenerieren();
-
-            Sortieren1.Visibility = Visibility.Visible;
-            Sortieren2.Visibility = Visibility.Visible;
-            Sortieren3.Visibility = Visibility.Visible;
-            Sortieren4.Visibility = Visibility.Visible;
-            Sortieren5.Visibility = Visibility.Visible;
-            Sortieren6.Visibility = Visibility.Visible;
-            Sortieren7.Visibility = Visibility.Visible;
-            Sortieren8.Visibility = Visibility.Visible;
-            Sortieren9.Visibility = Visibility.Visible;
-            Sortieren10.Visibility = Visibility.Visible;
-
-            LeisteSortieren1.Visibility = Visibility.Hidden;
-            LeisteSortieren2.Visibility = Visibility.Hidden;
-            LeisteSortieren3.Visibility = Visibility.Hidden;
-            LeisteSortieren4.Visibility = Visibility.Hidden;
-            LeisteSortieren5.Visibility = Visibility.Hidden;
-            LeisteSortieren6.Visibility = Visibility.Hidden;
-            LeisteSortieren7.Visibility = Visibility.Hidden;
-            LeisteSortieren8.Visibility = Visibility.Hidden;
-            LeisteSortieren9.Visibility = Visibility.Hidden;
-            LeisteSortieren10.Visibility = Visibility.Hidden;
-
-            Menu.Visibility = Visibility.Visible;
-        }
-
-        public void zahlenSortierenGenerieren()
-        {
-            zahlenSortieren1 = zufall.Next(1, 101);
-
-            while (zahlenSortieren2 == 0 || zahlenSortieren2 == zahlenSortieren1)
-                zahlenSortieren2 = zufall.Next(1, 101);
-            while (zahlenSortieren3 == 0 || zahlenSortieren3 == zahlenSortieren1 || zahlenSortieren3 == zahlenSortieren2)
-                zahlenSortieren3 = zufall.Next(1, 101);
-            while (zahlenSortieren4 == 0 || zahlenSortieren4 == zahlenSortieren1 || zahlenSortieren4 == zahlenSortieren2 || zahlenSortieren4 == zahlenSortieren3)
-                zahlenSortieren4 = zufall.Next(1, 101);
-            while (zahlenSortieren5 == 0 || zahlenSortieren5 == zahlenSortieren1 || zahlenSortieren5 == zahlenSortieren2 || zahlenSortieren5 == zahlenSortieren3 || zahlenSortieren5 == zahlenSortieren4)
-                zahlenSortieren5 = zufall.Next(1, 101);
-            while (zahlenSortieren6 == 0 || zahlenSortieren6 == zahlenSortieren1 || zahlenSortieren6 == zahlenSortieren2 || zahlenSortieren6 == zahlenSortieren3 || zahlenSortieren6 == zahlenSortieren4 || zahlenSortieren6 == zahlenSortieren5)
-                zahlenSortieren6 = zufall.Next(1, 101);
-            while (zahlenSortieren7 == 0 || zahlenSortieren7 == zahlenSortieren1 || zahlenSortieren7 == zahlenSortieren2 || zahlenSortieren7 == zahlenSortieren3 || zahlenSortieren7 == zahlenSortieren4 || zahlenSortieren7 == zahlenSortieren5 || zahlenSortieren7 == zahlenSortieren6)
-                zahlenSortieren7 = zufall.Next(1, 101);
-            while (zahlenSortieren8 == 0 || zahlenSortieren8 == zahlenSortieren1 || zahlenSortieren8 == zahlenSortieren2 || zahlenSortieren8 == zahlenSortieren3 || zahlenSortieren8 == zahlenSortieren4 || zahlenSortieren8 == zahlenSortieren5 || zahlenSortieren8 == zahlenSortieren6 || zahlenSortieren8 == zahlenSortieren7)
-                zahlenSortieren8 = zufall.Next(1, 101);
-            while (zahlenSortieren9 == 0 || zahlenSortieren9 == zahlenSortieren1 || zahlenSortieren9 == zahlenSortieren2 || zahlenSortieren9 == zahlenSortieren3 || zahlenSortieren9 == zahlenSortieren4 || zahlenSortieren9 == zahlenSortieren5 || zahlenSortieren9 == zahlenSortieren6 || zahlenSortieren9 == zahlenSortieren7 || zahlenSortieren9 == zahlenSortieren8)
-                zahlenSortieren9 = zufall.Next(1, 101);
-            while (zahlenSortieren10 == 0 || zahlenSortieren10 == zahlenSortieren1 || zahlenSortieren10 == zahlenSortieren2 || zahlenSortieren10 == zahlenSortieren3 || zahlenSortieren10 == zahlenSortieren4 || zahlenSortieren10 == zahlenSortieren5 || zahlenSortieren10 == zahlenSortieren6 || zahlenSortieren10 == zahlenSortieren7 || zahlenSortieren10 == zahlenSortieren8 || zahlenSortieren10 == zahlenSortieren9)
-                zahlenSortieren10 = zufall.Next(1, 101);
-
-            Sortieren1.Content = Convert.ToString(zahlenSortieren1);
-            Sortieren2.Content = Convert.ToString(zahlenSortieren2);
-            Sortieren3.Content = Convert.ToString(zahlenSortieren3);
-            Sortieren4.Content = Convert.ToString(zahlenSortieren4);
-            Sortieren5.Content = Convert.ToString(zahlenSortieren5);
-            Sortieren6.Content = Convert.ToString(zahlenSortieren6);
-            Sortieren7.Content = Convert.ToString(zahlenSortieren7);
-            Sortieren8.Content = Convert.ToString(zahlenSortieren8);
-            Sortieren9.Content = Convert.ToString(zahlenSortieren9);
-            Sortieren10.Content = Convert.ToString(zahlenSortieren10);
-
-            SortierenArray[0] = zahlenSortieren1;
-            SortierenArray[1] = zahlenSortieren2;
-            SortierenArray[2] = zahlenSortieren3;
-            SortierenArray[3] = zahlenSortieren4;
-            SortierenArray[4] = zahlenSortieren5;
-            SortierenArray[5] = zahlenSortieren6;
-            SortierenArray[6] = zahlenSortieren7;
-            SortierenArray[7] = zahlenSortieren8;
-            SortierenArray[8] = zahlenSortieren9;
-            SortierenArray[9] = zahlenSortieren10;
-
-            Array.Sort(SortierenArray);
         }
 
         private void Einfach_Click(object sender, RoutedEventArgs e)
@@ -439,6 +360,86 @@ namespace Lernprogramm
 
         }
 
+        private void ZahlenSortieren_Click(object sender, RoutedEventArgs e)
+        {
+            Titel.Text = "ZAHLEN SORTIEREN";
+            AllesVerstecken();
+            GridZahlenSortieren.Visibility = Visibility.Visible;
+            zahlenSortierenGenerieren();
+
+            Sortieren1.Visibility = Visibility.Visible;
+            Sortieren2.Visibility = Visibility.Visible;
+            Sortieren3.Visibility = Visibility.Visible;
+            Sortieren4.Visibility = Visibility.Visible;
+            Sortieren5.Visibility = Visibility.Visible;
+            Sortieren6.Visibility = Visibility.Visible;
+            Sortieren7.Visibility = Visibility.Visible;
+            Sortieren8.Visibility = Visibility.Visible;
+            Sortieren9.Visibility = Visibility.Visible;
+            Sortieren10.Visibility = Visibility.Visible;
+
+            LeisteSortieren1.Visibility = Visibility.Hidden;
+            LeisteSortieren2.Visibility = Visibility.Hidden;
+            LeisteSortieren3.Visibility = Visibility.Hidden;
+            LeisteSortieren4.Visibility = Visibility.Hidden;
+            LeisteSortieren5.Visibility = Visibility.Hidden;
+            LeisteSortieren6.Visibility = Visibility.Hidden;
+            LeisteSortieren7.Visibility = Visibility.Hidden;
+            LeisteSortieren8.Visibility = Visibility.Hidden;
+            LeisteSortieren9.Visibility = Visibility.Hidden;
+            LeisteSortieren10.Visibility = Visibility.Hidden;
+
+            Menu.Visibility = Visibility.Visible;
+        }
+
+        public void zahlenSortierenGenerieren()
+        {
+            zahlenSortieren1 = zufall.Next(1, 101);
+
+            while (zahlenSortieren2 == 0 || zahlenSortieren2 == zahlenSortieren1)
+                zahlenSortieren2 = zufall.Next(1, 101);
+            while (zahlenSortieren3 == 0 || zahlenSortieren3 == zahlenSortieren1 || zahlenSortieren3 == zahlenSortieren2)
+                zahlenSortieren3 = zufall.Next(1, 101);
+            while (zahlenSortieren4 == 0 || zahlenSortieren4 == zahlenSortieren1 || zahlenSortieren4 == zahlenSortieren2 || zahlenSortieren4 == zahlenSortieren3)
+                zahlenSortieren4 = zufall.Next(1, 101);
+            while (zahlenSortieren5 == 0 || zahlenSortieren5 == zahlenSortieren1 || zahlenSortieren5 == zahlenSortieren2 || zahlenSortieren5 == zahlenSortieren3 || zahlenSortieren5 == zahlenSortieren4)
+                zahlenSortieren5 = zufall.Next(1, 101);
+            while (zahlenSortieren6 == 0 || zahlenSortieren6 == zahlenSortieren1 || zahlenSortieren6 == zahlenSortieren2 || zahlenSortieren6 == zahlenSortieren3 || zahlenSortieren6 == zahlenSortieren4 || zahlenSortieren6 == zahlenSortieren5)
+                zahlenSortieren6 = zufall.Next(1, 101);
+            while (zahlenSortieren7 == 0 || zahlenSortieren7 == zahlenSortieren1 || zahlenSortieren7 == zahlenSortieren2 || zahlenSortieren7 == zahlenSortieren3 || zahlenSortieren7 == zahlenSortieren4 || zahlenSortieren7 == zahlenSortieren5 || zahlenSortieren7 == zahlenSortieren6)
+                zahlenSortieren7 = zufall.Next(1, 101);
+            while (zahlenSortieren8 == 0 || zahlenSortieren8 == zahlenSortieren1 || zahlenSortieren8 == zahlenSortieren2 || zahlenSortieren8 == zahlenSortieren3 || zahlenSortieren8 == zahlenSortieren4 || zahlenSortieren8 == zahlenSortieren5 || zahlenSortieren8 == zahlenSortieren6 || zahlenSortieren8 == zahlenSortieren7)
+                zahlenSortieren8 = zufall.Next(1, 101);
+            while (zahlenSortieren9 == 0 || zahlenSortieren9 == zahlenSortieren1 || zahlenSortieren9 == zahlenSortieren2 || zahlenSortieren9 == zahlenSortieren3 || zahlenSortieren9 == zahlenSortieren4 || zahlenSortieren9 == zahlenSortieren5 || zahlenSortieren9 == zahlenSortieren6 || zahlenSortieren9 == zahlenSortieren7 || zahlenSortieren9 == zahlenSortieren8)
+                zahlenSortieren9 = zufall.Next(1, 101);
+            while (zahlenSortieren10 == 0 || zahlenSortieren10 == zahlenSortieren1 || zahlenSortieren10 == zahlenSortieren2 || zahlenSortieren10 == zahlenSortieren3 || zahlenSortieren10 == zahlenSortieren4 || zahlenSortieren10 == zahlenSortieren5 || zahlenSortieren10 == zahlenSortieren6 || zahlenSortieren10 == zahlenSortieren7 || zahlenSortieren10 == zahlenSortieren8 || zahlenSortieren10 == zahlenSortieren9)
+                zahlenSortieren10 = zufall.Next(1, 101);
+
+            Sortieren1.Content = Convert.ToString(zahlenSortieren1);
+            Sortieren2.Content = Convert.ToString(zahlenSortieren2);
+            Sortieren3.Content = Convert.ToString(zahlenSortieren3);
+            Sortieren4.Content = Convert.ToString(zahlenSortieren4);
+            Sortieren5.Content = Convert.ToString(zahlenSortieren5);
+            Sortieren6.Content = Convert.ToString(zahlenSortieren6);
+            Sortieren7.Content = Convert.ToString(zahlenSortieren7);
+            Sortieren8.Content = Convert.ToString(zahlenSortieren8);
+            Sortieren9.Content = Convert.ToString(zahlenSortieren9);
+            Sortieren10.Content = Convert.ToString(zahlenSortieren10);
+
+            SortierenArray[0] = zahlenSortieren1;
+            SortierenArray[1] = zahlenSortieren2;
+            SortierenArray[2] = zahlenSortieren3;
+            SortierenArray[3] = zahlenSortieren4;
+            SortierenArray[4] = zahlenSortieren5;
+            SortierenArray[5] = zahlenSortieren6;
+            SortierenArray[6] = zahlenSortieren7;
+            SortierenArray[7] = zahlenSortieren8;
+            SortierenArray[8] = zahlenSortieren9;
+            SortierenArray[9] = zahlenSortieren10;
+
+            Array.Sort(SortierenArray);
+        }
+
         private void Sortieren1_Click(object sender, RoutedEventArgs e)
         {
             int zahlCheck = Convert.ToInt32(Sortieren1.Content);
@@ -564,57 +565,57 @@ namespace Lernprogramm
 
         public void LeisteAktualisieren(int zahl)
         {
-            if (LeisteZähler == 0)
+            if (leisteZähler == 0)
             {
                 LeisteText1.Text = Convert.ToString(zahl);
                 LeisteSortieren1.Visibility = Visibility.Visible;
             }
-            if (LeisteZähler == 1)
+            if (leisteZähler == 1)
             {
                 LeisteText2.Text = Convert.ToString(zahl);
                 LeisteSortieren2.Visibility = Visibility.Visible;
             }
-            if (LeisteZähler == 2)
+            if (leisteZähler == 2)
             {
                 LeisteText3.Text = Convert.ToString(zahl);
                 LeisteSortieren3.Visibility = Visibility.Visible;
             }
-            if (LeisteZähler == 3)
+            if (leisteZähler == 3)
             {
                 LeisteText4.Text = Convert.ToString(zahl);
                 LeisteSortieren4.Visibility = Visibility.Visible;
             }
-            if (LeisteZähler == 4)
+            if (leisteZähler == 4)
             {
                 LeisteText5.Text = Convert.ToString(zahl);
                 LeisteSortieren5.Visibility = Visibility.Visible;
             }
-            if (LeisteZähler == 5)
+            if (leisteZähler == 5)
             {
                 LeisteText6.Text = Convert.ToString(zahl);
                 LeisteSortieren6.Visibility = Visibility.Visible;
             }
-            if (LeisteZähler == 6)
+            if (leisteZähler == 6)
             {
                 LeisteText7.Text = Convert.ToString(zahl);
                 LeisteSortieren7.Visibility = Visibility.Visible;
             }
-            if (LeisteZähler == 7)
+            if (leisteZähler == 7)
             {
                 LeisteText8.Text = Convert.ToString(zahl);
                 LeisteSortieren8.Visibility = Visibility.Visible;
             }
-            if (LeisteZähler == 8)
+            if (leisteZähler == 8)
             {
                 LeisteText9.Text = Convert.ToString(zahl);
                 LeisteSortieren9.Visibility = Visibility.Visible;
             }
-            if (LeisteZähler == 9)
+            if (leisteZähler == 9)
             {
                 LeisteText10.Text = Convert.ToString(zahl);
                 LeisteSortieren10.Visibility = Visibility.Visible;
             }
-            LeisteZähler++;
+            leisteZähler++;
         }
 
         private void Übertrag1_Click(object sender, RoutedEventArgs e)
