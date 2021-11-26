@@ -26,6 +26,8 @@ namespace Lernprogramm
             InitializeComponent();
         }
 
+        // Test Kommentar
+
         char rechenOperator;            // Nimmt entweder '+' oder '-' als Wert an
         int schwierigkeitsgrad;         // Nimmt 1, 2 oder 3 als Wert an
         int aufgabenmenge;              // Nimmt 5, 10 oder 20 als Wert an
