@@ -1377,7 +1377,7 @@
             </Button>
         </Grid>
 
-        <Grid x:Name="GridMinispiel" Grid.Row="1" Background="#e1dddb" Visibility="Visible">
+        <Grid x:Name="GridMinispiel" Grid.Row="1" Background="#e1dddb" Visibility="Hidden">
             <Grid.RowDefinitions>
                 <RowDefinition/>
                 <RowDefinition Height="5*"/>
