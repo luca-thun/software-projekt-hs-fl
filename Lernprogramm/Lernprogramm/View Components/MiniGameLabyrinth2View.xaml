@@ -1,0 +1,139 @@
+﻿<Window x:Class="Lernprogramm.View.MiniGameLabyrinth1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Lernprogramm.View"
+        mc:Ignorable="d"
+        Title="MiniGameLabyrinth2View" Height="450" Width="800">
+    
+    <Grid x:Name="GridMiniGame" Grid.Row="1" Background="#e1dddb">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="5*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Border    Grid.ColumnSpan="3"
+                       BorderThickness="1"
+                       CornerRadius="10"
+                       Background="#3B3838"
+                       BorderBrush="#3B3838"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                       Width="500"
+                       Height="40">
+
+            <TextBlock Text="Welcher Weg führt zum Ziel?"
+                           FontSize="24"
+                           TextAlignment="Center"
+                           Foreground="White">
+            </TextBlock>
+        </Border>
+
+        <Button x:Name="Weg12" Content="1" Grid.Row="2"
+                    Foreground="White"
+                    FontSize="22"
+                    FontWeight="Medium"
+                    
+                    Click="Weg12_Click">
+
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Setter Property="Background" Value="#910D0D"/>
+                    <Setter Property="Cursor" Value="Hand"/>
+
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="#B41010"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border Width="200" Height="40"
+                                    CornerRadius="18"
+                                    Background="{TemplateBinding Background}">
+                        <ContentPresenter VerticalAlignment="Center"
+                                                  HorizontalAlignment="Center">
+                        </ContentPresenter>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+
+        <Button x:Name="Weg22" Content="2" Grid.Row="2" Grid.Column="1"
+                    Foreground="White"
+                    FontSize="22"
+                    FontWeight="Medium"
+                    
+                    Click="Weg22_Click">
+
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Setter Property="Background" Value="#910D0D"/>
+                    <Setter Property="Cursor" Value="Hand"/>
+
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="#B41010"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border Width="200" Height="40"
+                                    CornerRadius="18"
+                                    Background="{TemplateBinding Background}">
+                        <ContentPresenter VerticalAlignment="Center"
+                                                  HorizontalAlignment="Center">
+                        </ContentPresenter>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+
+        <Button x:Name="Weg32" Content="3" Grid.Row="2" Grid.Column="2"
+                    Foreground="White"
+                    FontSize="22"
+                    FontWeight="Medium"
+                    
+                    Click="Weg32_Click">
+
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Setter Property="Background" Value="#910D0D"/>
+                    <Setter Property="Cursor" Value="Hand"/>
+
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="#B41010"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border Width="200" Height="40"
+                                    CornerRadius="18"
+                                    Background="{TemplateBinding Background}">
+                        <ContentPresenter VerticalAlignment="Center"
+                                                  HorizontalAlignment="Center">
+                        </ContentPresenter>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+
+    </Grid>
+</Window>

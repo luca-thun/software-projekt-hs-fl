@@ -1,0 +1,61 @@
+﻿<Window x:Class="Lernprogramm.View.PerformanceOverview"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Lernprogramm.View"
+        mc:Ignorable="d"
+        Title="PerformanceOverviewView" Height="450" Width="800">
+    
+    <Grid Grid.Row="1" x:Name="GridLeistungsübersicht" Background="#e1dddb">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="150"/>
+            <RowDefinition Height="80"/>
+            <RowDefinition Height="70"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="1" x:Name="LeistungText"
+                       Text="Du hast XX von XX Aufgaben richtig gelöst!"
+                       FontSize="30"
+                       TextAlignment="Center"
+                       VerticalAlignment="Center">
+        </TextBlock>
+
+        <Button     x:Name="ButtonMinispiel" Grid.Row="3"
+                        Content="Weiter zum Minispiel" 
+                        Foreground="Black"
+                        FontSize="42"
+                        FontWeight="Medium"
+                        
+                        Click="ButtonMinispiel_Click">
+
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Setter Property="Background" Value="#E9591F"/>
+                    <Setter Property="Cursor" Value="Hand"/>
+
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="#EF885F"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border Width="500" Height="70"
+                                    CornerRadius="32"
+                                    Background="{TemplateBinding Background}">
+                        <ContentPresenter VerticalAlignment="Center"
+                                                  HorizontalAlignment="Center">
+                        </ContentPresenter>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+
+        </Button>
+    </Grid>
+</Window>
