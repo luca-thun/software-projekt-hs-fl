@@ -3,16 +3,22 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Lernprogramm"
+        xmlns:local="clr-namespace:Lernprogramm.ViewModel"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
+    <Window.DataContext>
+        <!-- Verbindung zum ViewModel -->
+        <local:MainViewModel/>
+    </Window.DataContext>
+    
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="50"/>
             <RowDefinition />
         </Grid.RowDefinitions>
 
-        <Grid x:Name="Navigationsleiste" Background="#3B3838"> <!--Navigationsleiste, die immer zu sehen ist-->
+        <!--Navigationsleiste, die immer zu sehen ist-->
+        <Grid x:Name="Navigationsleiste" Background="#3B3838"> 
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="110"/>
                 <ColumnDefinition Width="100"/>
@@ -92,18 +98,22 @@
 
             </Button> <!--Button, mit dem man immer zurück zum Hauptmenü gelangt-->
 
+            <!--Titel. Ändert sich je nach dem auf welcher Seite man sich befindet-->
             <TextBlock x:Name="Titel"
                        Grid.Column="2"
-                       Text="STARTSEITE"
+                       Text="{Binding Caption}"
                        TextAlignment="Center"
                        VerticalAlignment="Center"
                        Margin="0,0,210,0"
                        Foreground="White"
                        FontSize="20">
-            </TextBlock> <!--Titel. Ändert sich je nach dem auf welcher Seite man sich befindet-->
+            </TextBlock> 
         </Grid>
 
-        <Grid x:Name="GridStartseite" Grid.Row="1" Background="#e1dddb" Visibility="Visible"> <!--Startseite, die einen begrüßt, wenn man das Programm startet.-->
+        <Grid x:Name="GridStartseite" 
+              Grid.Row="1" 
+              Background="#e1dddb" 
+              Visibility="{Binding StartGridVisibility}"> <!--Startseite, die einen begrüßt, wenn man das Programm startet.-->
             <Grid.RowDefinitions>
                 <RowDefinition/>
                 <RowDefinition Height="150"/>
@@ -119,13 +129,12 @@
                        VerticalAlignment="Center">
             </TextBlock>
 
-            <Button     x:Name="ButtonStartseite" Grid.Row="3"
-                        Content="Start" 
-                        Foreground="Black"
-                        FontSize="42"
-                        FontWeight="Medium"
-                        
-                        Click="ButtonStartseite_Click">
+            <Button x:Name="ButtonStartseite" Grid.Row="3"
+                    Content="Start" 
+                    Foreground="Black"
+                    FontSize="42"
+                    FontWeight="Medium"
+                    Command="{Binding StartBtn, Mode=OneWay}">
 
                 <Button.Style>
                     <Style TargetType="Button">
@@ -155,7 +164,10 @@
             </Button>
         </Grid>
 
-        <Grid x:Name="GridMenu" Grid.Row="1" Background="#e1dddb" Visibility="Hidden"> <!--Menü, bei dem man sich für verschiedene Übungsmodi entscheiden kann--> 
+        <Grid x:Name="GridMenu" 
+              Grid.Row="1" 
+              Background="#e1dddb" 
+              Visibility="{Binding MenuGridVisibility}"> <!--Menü, bei dem man sich für verschiedene Übungsmodi entscheiden kann--> 
             <Grid.RowDefinitions>
                 <RowDefinition/>
                 <RowDefinition/>
@@ -164,12 +176,11 @@
                 <RowDefinition/>
             </Grid.RowDefinitions>
 
-            <Button     x:Name="PlusRechnen" Content="Plus rechnen" Grid.Row="1"
-                        Foreground="Black"
-                        FontSize="28"
-                        FontWeight="Medium"
-                        
-                        Click="PlusRechnen_Click">
+            <Button x:Name="PlusRechnen" Content="Plus rechnen" Grid.Row="1"
+                    Foreground="Black"
+                    FontSize="28"
+                    FontWeight="Medium"                   
+                    Command="{Binding OperatorAdditionBtn}">
 
                 <Button.Style>
                     <Style TargetType="Button">
@@ -264,7 +275,10 @@
             </Button>
         </Grid>
 
-        <Grid x:Name="GridZahlenSortieren" Grid.Row="1" Background="#e1dddb" Visibility="Hidden">
+        <Grid x:Name="GridZahlenSortieren" 
+              Grid.Row="1" 
+              Background="#e1dddb" 
+              Visibility="{Binding NumberOrderGridVisibility}">
             <Grid.RowDefinitions>
                 <RowDefinition Height="3*"/>
                 <RowDefinition Height="16*"/>
@@ -656,7 +670,7 @@
                            Width="50"
                            Height="50">
 
-                    <TextBlock x:Name="LeisteText1" Text="0"
+                    <TextBlock x:Name="LeisteText1" Text="{Binding Menu1}"
                                FontSize="24"
                                TextAlignment="Center"
                                VerticalAlignment="Center"
@@ -674,7 +688,7 @@
                            Width="50"
                            Height="50">
 
-                    <TextBlock x:Name="LeisteText2" Text="0"
+                    <TextBlock x:Name="LeisteText2" Text="{Binding Menu2}"
                                FontSize="24"
                                TextAlignment="Center"
                                VerticalAlignment="Center"
@@ -692,7 +706,7 @@
                            Width="50"
                            Height="50">
 
-                    <TextBlock x:Name="LeisteText3" Text="0"
+                    <TextBlock x:Name="LeisteText3" Text="{Binding Menu3}"
                                FontSize="24"
                                TextAlignment="Center"
                                VerticalAlignment="Center"
@@ -710,7 +724,7 @@
                            Width="50"
                            Height="50">
 
-                    <TextBlock x:Name="LeisteText4" Text="0"
+                    <TextBlock x:Name="LeisteText4" Text="{Binding Menu4}"
                                FontSize="24"
                                TextAlignment="Center"
                                VerticalAlignment="Center"
@@ -728,7 +742,7 @@
                            Width="50"
                            Height="50">
 
-                    <TextBlock x:Name="LeisteText5" Text="0"
+                    <TextBlock x:Name="LeisteText5" Text="{Binding Menu5}"
                                FontSize="24"
                                TextAlignment="Center"
                                VerticalAlignment="Center"
@@ -746,7 +760,7 @@
                            Width="50"
                            Height="50">
 
-                    <TextBlock x:Name="LeisteText6" Text="0"
+                    <TextBlock x:Name="LeisteText6" Text="{Binding Menu6}"
                                FontSize="24"
                                TextAlignment="Center"
                                VerticalAlignment="Center"
@@ -828,7 +842,10 @@
             </Grid>
         </Grid>
 
-        <Grid x:Name="GridSchwierigkeit" Grid.Row="1" Background="#e1dddb" Visibility="Hidden"> <!--Auswahlmöglichkeiten zum Schwierigkeitsgrad-->
+        <Grid x:Name="GridSchwierigkeit" 
+              Grid.Row="1" 
+              Background="#e1dddb" 
+              Visibility="{Binding DifficultyGridVisibility}"> <!--Auswahlmöglichkeiten zum Schwierigkeitsgrad-->
             <Grid.RowDefinitions>
                 <RowDefinition/>
                 <RowDefinition/>
@@ -857,13 +874,12 @@
                 </TextBlock>
             </Border>
 
-            <Button     x:Name="Einfach" Content="Einfach" Grid.Row="1"
-                        Foreground="Black"
-                        FontSize="36"
-                        FontWeight="Medium"
-                        Margin="30,0,10,0"
-                        
-                        Click="Einfach_Click">
+            <Button x:Name="Einfach" Content="Einfach" Grid.Row="1"
+                    Foreground="Black"
+                    FontSize="36"
+                    FontWeight="Medium"
+                    Margin="30,0,10,0"                     
+                    Command="{Binding EasyDifficultyBtn, Mode=OneWay}">
 
                 <Button.Style>
                     <Style TargetType="Button">
@@ -890,14 +906,11 @@
                 </Button.Template>
             </Button>
 
-            <Button     x:Name="Mittel" Content="Mittel" Grid.Row="1" Grid.Column="1"
-                        Foreground="Black"
-                        FontSize="36"
-                        FontWeight="Medium"
-                        Margin="20,0"
-                        
-                        Click="Mittel_Click">
-
+            <Button x:Name="Mittel" Content="Mittel" Grid.Row="1" Grid.Column="1"
+                    Foreground="Black"
+                    FontSize="36"
+                    FontWeight="Medium"
+                    Margin="20,0" Command="{Binding MediumDifficultyBtn, Mode=OneWay}">
                 <Button.Style>
                     <Style TargetType="Button">
                         <Setter Property="Background" Value="#E9591F"/>
@@ -927,15 +940,12 @@
                         Foreground="Black"
                         FontSize="36"
                         FontWeight="Medium"
-                        Margin="10,0,30,0"
-                        
-                        Click="Schwer_Click">
-
+                        Margin="10,0,30,0" 
+                        Command="{Binding HardDifficultyBtn, Mode=OneWay}">
                 <Button.Style>
                     <Style TargetType="Button">
                         <Setter Property="Background" Value="#910D0D"/>
                         <Setter Property="Cursor" Value="Hand"/>
-
                         <Style.Triggers>
                             <Trigger Property="IsMouseOver" Value="True">
                                 <Setter Property="Background" Value="#B41010"/>
@@ -957,7 +967,10 @@
             </Button>
         </Grid>
 
-        <Grid x:Name="GridAufgabenmenge" Grid.Row="1" Background="#e1dddb" Visibility="Hidden">
+        <Grid x:Name="GridAufgabenmenge" 
+              Grid.Row="1" 
+              Background="#e1dddb" 
+              Visibility="{Binding QuantityGridVisibility}">
             <Grid.RowDefinitions>
                 <RowDefinition/>
                 <RowDefinition/>
@@ -969,16 +982,15 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
 
-            <Border    Grid.ColumnSpan="3"
-                       BorderThickness="1"
-                       CornerRadius="10"
-                       Background="#3B3838"
-                       BorderBrush="#3B3838"
-                       HorizontalAlignment="Center"
-                       VerticalAlignment="Center"
-                       Width="500"
-                       Height="40">
-
+            <Border Grid.ColumnSpan="3"
+                    BorderThickness="1"
+                    CornerRadius="10"
+                    Background="#3B3838"
+                    BorderBrush="#3B3838"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Width="500"
+                    Height="40">
                 <TextBlock Text="Wie viele Aufgaben möchtest du rechnen?"
                            FontSize="24"
                            TextAlignment="Center"
@@ -991,9 +1003,8 @@
                         FontSize="36"
                         FontWeight="Medium"
                         Margin="30,0,10,0"
-                        
-                        Click="Aufgaben5_Click">
-
+                        Command="{Binding ChooseQuantityBtn, Mode=OneWay}"
+                        CommandParameter="5">
                 <Button.Style>
                     <Style TargetType="Button">
                         <Setter Property="Background" Value="#E9C737"/>
@@ -1024,9 +1035,8 @@
                         FontSize="36"
                         FontWeight="Medium"
                         Margin="20,0"
-                        
-                        Click="Aufgaben10_Click">
-
+                        Command="{Binding ChooseQuantityBtn, Mode=OneWay}"
+                        CommandParameter="10">
                 <Button.Style>
                     <Style TargetType="Button">
                         <Setter Property="Background" Value="#E9591F"/>
@@ -1057,9 +1067,8 @@
                         FontSize="36"
                         FontWeight="Medium"
                         Margin="10,0,30,0"
-                        
-                        Click="Aufgaben20_Click">
-
+                        Command="{Binding ChooseQuantityBtn, Mode=OneWay}"
+                        CommandParameter="20">
                 <Button.Style>
                     <Style TargetType="Button">
                         <Setter Property="Background" Value="#910D0D"/>
@@ -1086,7 +1095,10 @@
             </Button>
         </Grid>
         
-        <Grid x:Name="GridRechenprogramm" Grid.Row="1" Background="#e1dddb" Visibility="Hidden">
+        <Grid x:Name="GridRechenprogramm" 
+              Grid.Row="1" 
+              Background="#e1dddb" 
+              Visibility="{Binding CalculationGridVisibility}">
             <Grid.RowDefinitions>
                 <RowDefinition Height="2*"/>
                 <RowDefinition Height="2*"/>
@@ -1113,7 +1125,8 @@
                        Width="200"
                        Height="80">
 
-                <TextBlock x:Name="ObereZahl" Text="00"
+                <TextBlock x:Name="ObereZahl" 
+                           Text="{Binding FirstNumberText, UpdateSourceTrigger=PropertyChanged}"
                            FontSize="54"
                            Margin="0,0,40,0"
                            TextAlignment="Right"
@@ -1132,7 +1145,8 @@
                        Width="200"
                        Height="80">
 
-                <TextBlock x:Name="UntereZahl" Text="00"
+                <TextBlock x:Name="UntereZahl" 
+                           Text="{Binding SecondNumberText, UpdateSourceTrigger=PropertyChanged}"
                            FontSize="54"
                            Margin="0,0,40,0"
                            TextAlignment="Right"
@@ -1150,24 +1164,24 @@
                        Width="80"
                        Height="80">
 
-                <TextBlock x:Name="Operator" Text="+"
+                <TextBlock x:Name="Operator" Text="{Binding OperatorText}"
                            FontSize="54"
                            TextAlignment="Center"
                            Foreground="White">
                 </TextBlock>
             </Border>
 
-            <Button     x:Name="Übertrag1" Content="" Grid.Row="2" Grid.Column="3"
+            <Button     x:Name="Übertrag1" 
+                        Content="{Binding TransferBtnContent1, UpdateSourceTrigger=PropertyChanged}" 
+                        Grid.Row="2" Grid.Column="3"
                         Foreground="White"
                         FontSize="18"
                         FontWeight="Medium"
                         Width="25"
                         Height="25"
                         HorizontalAlignment="Left"
-                        Margin="3,0,0,0"
-                        
-                        Click="Übertrag1_Click">
-
+                        Margin="3,0,0,0" 
+                        Command="{Binding Transfer1Btn, Mode=OneWay}">
                 <Button.Style>
                     <Style TargetType="Button">
                         <Setter Property="Background" Value="#3B3838"/>
@@ -1193,17 +1207,16 @@
                 </Button.Template>
             </Button>
 
-            <Button     x:Name="Übertrag2" Content="" Grid.Row="2" Grid.Column="2"
+            <Button     x:Name="Übertrag2" 
+                        Content="{Binding TransferBtnContent2, UpdateSourceTrigger=PropertyChanged}" Grid.Row="2" Grid.Column="2"
                         Foreground="White"
                         FontSize="18"
                         FontWeight="Medium"
                         Width="25"
                         Height="25"
                         HorizontalAlignment="Right"
-                        Margin="0,0,1,0"
-                        
-                        Click="Übertrag2_Click">
-
+                        Margin="0,0,1,0" 
+                        Command="{Binding Transfer2Btn, Mode=OneWay}">
                 <Button.Style>
                     <Style TargetType="Button">
                         <Setter Property="Background" Value="#3B3838"/>
@@ -1266,7 +1279,7 @@
                      Padding="0,0,37,0"
                      FontSize="54"
                      PreviewTextInput="ErgebnisEingabe_PreviewTextInput"
-                     MaxLength="3">
+                     MaxLength="3" Text="{Binding InputText, UpdateSourceTrigger=PropertyChanged}">
             </TextBox>
 
             <Button     x:Name="WeiterRechnen" Content="Weiter" Grid.Row="3" Grid.Column="4"
@@ -1275,9 +1288,7 @@
                         FontWeight="Medium"
                         Width="80"
                         Height="80"
-                        HorizontalAlignment="Left"
-                        
-                        Click="WeiterRechnen_Click">
+                        HorizontalAlignment="Left" Command="{Binding CalculateBtn}">
 
                 <Button.Style>
                     <Style TargetType="Button">
@@ -1314,9 +1325,10 @@
                        VerticalAlignment="Center"
                        Width="250"
                        Height="50"
-                       Visibility="Hidden">
+                       Visibility="{Binding FeedbackGridVisibility}">
 
-                <TextBlock x:Name="LobText" Text="00"
+                <TextBlock x:Name="LobText" 
+                           Text="{Binding Response, UpdateSourceTrigger=PropertyChanged}"
                            FontSize="24"
                            VerticalAlignment="Center"
                            TextAlignment="Center"
@@ -1325,7 +1337,10 @@
             </Border>
         </Grid>
 
-        <Grid Grid.Row="1" x:Name="GridLeistungsübersicht" Background="#e1dddb" Visibility="Hidden">
+        <Grid Grid.Row="1" 
+              x:Name="GridLeistungsübersicht" 
+              Background="#e1dddb" 
+              Visibility="{Binding ResultGridVisibility}">
             <Grid.RowDefinitions>
                 <RowDefinition/>
                 <RowDefinition Height="150"/>
@@ -1335,7 +1350,7 @@
             </Grid.RowDefinitions>
 
             <TextBlock Grid.Row="1" x:Name="LeistungText"
-                       Text="Du hast XX von XX Aufgaben richtig gelöst!"
+                       Text="{Binding ResultText}"
                        FontSize="30"
                        TextAlignment="Center"
                        VerticalAlignment="Center">
@@ -1377,7 +1392,10 @@
             </Button>
         </Grid>
 
-        <Grid x:Name="GridMinispiel" Grid.Row="1" Background="#e1dddb" Visibility="Hidden">
+        <Grid x:Name="GridMinispiel" 
+              Grid.Row="1" 
+              Background="#e1dddb" 
+              Visibility="{Binding MinGameGridVisibility}">
             <Grid.RowDefinitions>
                 <RowDefinition/>
                 <RowDefinition Height="5*"/>
@@ -1409,10 +1427,7 @@
             <Button x:Name="Weg1" Content="1" Grid.Row="2"
                     Foreground="White"
                     FontSize="22"
-                    FontWeight="Medium"
-                    
-                    Click="Weg1_Click">
-
+                    FontWeight="Medium">
                 <Button.Style>
                     <Style TargetType="Button">
                         <Setter Property="Background" Value="#910D0D"/>
@@ -1442,10 +1457,7 @@
             <Button x:Name="Weg2" Content="2" Grid.Row="2" Grid.Column="1"
                     Foreground="White"
                     FontSize="22"
-                    FontWeight="Medium"
-                    
-                    Click="Weg2_Click">
-
+                    FontWeight="Medium">
                 <Button.Style>
                     <Style TargetType="Button">
                         <Setter Property="Background" Value="#910D0D"/>
@@ -1475,10 +1487,7 @@
             <Button x:Name="Weg3" Content="3" Grid.Row="2" Grid.Column="2"
                     Foreground="White"
                     FontSize="22"
-                    FontWeight="Medium"
-                    
-                    Click="Weg3_Click">
-
+                    FontWeight="Medium">
                 <Button.Style>
                     <Style TargetType="Button">
                         <Setter Property="Background" Value="#910D0D"/>
